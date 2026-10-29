@@ -1,0 +1,150 @@
+name: homehero
+
+x-app-environment: &app-environment
+  DATABASE_URL: postgresql://pam:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@postgres:5432/pam?schema=public
+  REDIS_URL: redis://redis:6379
+  S3_ENDPOINT: http://minio:9000
+  S3_PUBLIC_ENDPOINT: ${S3_PUBLIC_ENDPOINT:-http://localhost:9000}
+  S3_REGION: es-bcn-1
+  S3_ACCESS_KEY_ID: ${MINIO_ROOT_USER:-homehero}
+  S3_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD in .env}
+  S3_BUCKET: ${S3_BUCKET:-pam}
+  S3_FORCE_PATH_STYLE: "true"
+  VAPID_PUBLIC_KEY: ${VAPID_PUBLIC_KEY:-}
+  VAPID_PRIVATE_KEY: ${VAPID_PRIVATE_KEY:-}
+  VAPID_SUBJECT: ${VAPID_SUBJECT:-}
+
+x-runtime: &runtime
+  restart: unless-stopped
+  security_opt:
+    - no-new-privileges:true
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m"
+      max-file: "3"
+  networks:
+    - homehero
+
+services:
+  postgres:
+    <<: *runtime
+    container_name: homehero-postgres
+    image: postgres:16
+    command: ["postgres", "-c", "max_connections=200"]
+    environment:
+      POSTGRES_DB: pam
+      POSTGRES_USER: pam
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pam -d pam"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    <<: *runtime
+    container_name: homehero-redis
+    image: redis:7-alpine
+    ports:
+      - "127.0.0.1:${REDIS_PORT:-6379}:6379"
+    volumes:
+      - ./redis:/data
+    command: ["redis-server", "--appendonly", "yes"]
+
+  minio:
+    <<: *runtime
+    container_name: homehero-minio
+    image: cgr.dev/chainguard/minio:latest
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-homehero}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD in .env}
+    ports:
+      - "${S3_BIND_ADDRESS:-127.0.0.1}:${S3_PORT:-9000}:9000"
+      - "${S3_CONSOLE_BIND_ADDRESS:-127.0.0.1}:${S3_CONSOLE_PORT:-9002}:9001"
+    volumes:
+      - ./minio:/data
+    command: ["server", "/data", "--console-address", ":9001"]
+
+  web:
+    <<: *runtime
+    container_name: homehero-web
+    image: homehero-web:${HOMEHERO_IMAGE_TAG:-latest}
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      target: runner
+    init: true
+    env_file: ./.env
+    environment: *app-environment
+    ports:
+      - "${WEB_BIND_ADDRESS:-127.0.0.1}:${WEB_PORT:-3000}:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      minio:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 8s
+      retries: 3
+      start_period: 30s
+
+  notification-worker:
+    <<: *runtime
+    container_name: homehero-notification-worker
+    image: homehero-notification-worker:${HOMEHERO_IMAGE_TAG:-latest}
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      target: worker
+    init: true
+    stop_grace_period: 60s
+    env_file: ./.env
+    environment: *app-environment
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # These tools are excluded from ordinary `docker compose up`.
+  # setup.sh/update.sh use `run --rm --name ...` to leave no stopped containers.
+  maintenance:
+    profiles: [tools]
+    image: homehero-maintenance:${HOMEHERO_IMAGE_TAG:-latest}
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      target: builder
+    env_file: ./.env
+    environment: *app-environment
+    command: ["npm", "run", "prisma:deploy"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks: [homehero]
+
+  storage-setup:
+    profiles: [tools]
+    image: cgr.dev/chainguard/minio-client:latest-dev
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-homehero}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD in .env}
+      S3_BUCKET: ${S3_BUCKET:-pam}
+    volumes:
+      - ./docker/storage-setup.sh:/storage-setup.sh:ro
+    entrypoint: ["/bin/sh", "/storage-setup.sh"]
+    depends_on:
+      minio:
+        condition: service_started
+    networks: [homehero]
+
+networks:
+  homehero:
+    name: homehero

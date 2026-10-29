@@ -1,0 +1,20 @@
+import { describe, it, expect } from "vitest";
+import { AttendanceRule } from "../config";
+import { recognitionObservation, localDayAndSeconds } from "../recognition";
+const rule=AttendanceRule.parse({enabled:true,employeeId:"employee-one",personName:"Known employee",alarmName:"HomeHero Known employee",camera:{id:"salon",mac:"AA:BB",name:"cam-salon"},recognitionConfirmed:true});
+const now=new Date("2026-10-28T08:30:00Z");
+const payload=(date=now,device="salon",name=rule.alarmName)=>({alarm:{name,triggers:[{key:"face",device}]},timestamp:date.getTime()});
+describe("Protect daily named-person review",()=>{
+ it("accepts the configured named-person alarm on the selected camera",()=>{expect(recognitionObservation(payload(),rule,now)).toMatchObject({cameraId:"salon",date:"2026-10-28"})});
+ it.each(["door","kitchen","other"])("rejects camera %s",camera=>{expect(recognitionObservation(payload(now,camera),rule,now)).toBeNull()});
+ it("accepts normalized camera MAC addresses",()=>{expect(recognitionObservation(payload(now,"aabb"),rule,now)).not.toBeNull()});
+ it("rejects other alarms even from the right camera",()=>{expect(recognitionObservation(payload(now,"salon","Generic person"),rule,now)).toBeNull()});
+ it("does not accept disabled or unconfirmed recognition",()=>{expect(recognitionObservation(payload(),{...rule,recognitionConfirmed:false},now)).toBeNull();expect(recognitionObservation(payload(),{...rule,enabled:false},now)).toBeNull()});
+ it.each(["2026-10-28T01:00:00Z","2026-10-28T13:00:00Z","2026-10-28T22:59:59Z"])("accepts any time of the day %s",time=>{const date=new Date(time);expect(recognitionObservation(payload(date),rule,date)).not.toBeNull()});
+ it("assigns dates in Madrid rather than UTC across midnight",()=>{const date=new Date("2026-10-28T23:05:00Z");expect(recognitionObservation(payload(date),rule,date)?.date).toBe("2026-10-29")});
+ it("uses the event date even if delivery crosses midnight",()=>{const date=new Date("2026-10-28T22:59:59Z");expect(recognitionObservation(payload(date),rule,new Date("2026-10-28T23:00:05Z"))?.date).toBe("2026-10-28")});
+ it("handles summer and winter clock changes",()=>{expect(localDayAndSeconds(new Date("2026-07-01T07:30:00Z"),rule.timezone).seconds).toBe(34200);expect(localDayAndSeconds(now,rule.timezone).seconds).toBe(34200)});
+ it("rejects stale, future and malformed callbacks",()=>{expect(recognitionObservation(payload(new Date(now.getTime()-16*60_000)),rule,now)).toBeNull();expect(recognitionObservation(payload(new Date(now.getTime()+31_000)),rule,now)).toBeNull();expect(recognitionObservation({},rule,now)).toBeNull()});
+ it("returns one observation for repeated same-camera triggers",()=>{const p=payload();p.alarm.triggers.push(p.alarm.triggers[0]);expect(recognitionObservation(p,rule,now)?.cameraId).toBe("salon")});
+ it("requires explicit setup confirmation before enabling",()=>{expect(AttendanceRule.safeParse({...rule,recognitionConfirmed:false}).success).toBe(false)});
+});

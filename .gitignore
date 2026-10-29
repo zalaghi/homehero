@@ -1,0 +1,12 @@
+**/.env
+**/.env.*
+!**/.env.example
+**/node_modules/
+**/.next/
+db/
+redis/
+minio/
+backups/
+*.dump
+*.swp
+.DS_Store

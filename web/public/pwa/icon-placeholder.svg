@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="HomeHero placeholder icon">
+  <rect width="512" height="512" rx="96" fill="#0b1220" />
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="120" fill="#ffffff">
+    HH
+  </text>
+  <text x="50%" y="76%" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="32" fill="#94a3b8">
+    Placeholder
+  </text>
+</svg>

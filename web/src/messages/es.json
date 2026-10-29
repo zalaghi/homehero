@@ -1,0 +1,1177 @@
+{
+  "app": {
+    "name": "HomeHero"
+  },
+  "home": {
+    "title": "HomeHero",
+    "subtitle": "Nóminas, asistencia, deducciones y recibos en un solo lugar."
+  },
+  "common": {
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "loading": "Cargando…",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "saving": "Guardando…",
+    "edit": "Editar",
+    "yes": "Sí",
+    "no": "No",
+    "signIn": "Iniciar sesión",
+    "signingIn": "Iniciando sesión…",
+    "sending": "Enviando…",
+    "verifying": "Verificando…",
+    "revoke": "Revocar",
+    "approve": "Aprobar",
+    "deny": "Denegar",
+    "running": "Ejecutando…",
+    "refresh": "Actualizar"
+  },
+  "portal": {
+    "root": {
+      "title": "Portal del empleado",
+      "subtitle": "Abre tu enlace personal del portal proporcionado por tu empleador para iniciar sesión.",
+      "codeLabel": "Introduce tu código del portal",
+      "codePlaceholder": "Pega tu código o enlace del portal",
+      "codeHelp": "Puedes pegar el enlace completo o introducir el código de tu empleador.",
+      "codeError": "Introduce tu código de empleado para continuar.",
+      "openPortal": "Entrar",
+      "notYou": "¿No eres tú?",
+      "tipTitle": "Consejo",
+      "tipBody": "Parece que no has iniciado sesión. Usa el enlace único del portal que recibiste.",
+      "adminLogin": "Acceso de administrador"
+    },
+    "navigation": {
+      "dashboard": "Panel",
+      "attendance": "Asistencia",
+      "pay": "Nómina",
+      "todos": "Pendientes",
+      "essentials": "Esenciales",
+      "notifications": "Avisos"
+    },
+    "header": {
+      "quickOverview": "Resumen rápido",
+      "title": "Portal de {appName}",
+      "avatarAlt": "Avatar",
+      "refresh": "Actualizar",
+      "nav": {
+        "dashboard": "Panel",
+        "attendance": "Asistencia",
+        "payPeriods": "Períodos de pago",
+        "todos": "Pendientes",
+        "essentials": "Esenciales",
+        "notifications": "Avisos"
+      }
+    },
+    "login": {
+      "title": "Portal del empleado",
+      "subtitle": "Inicia sesión con un código de un solo uso enviado a tu correo.",
+      "emailOnFile": "Correo registrado: {email}",
+      "emailMissing": "no configurado (consulta al admin)",
+      "emailLabel": "Correo",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "emailHelp": "Introduce el correo que tenemos registrado. Enviaremos el OTP a tu bandeja.",
+      "sendCode": "Enviar código",
+      "sendError": "No se pudo enviar el código. Inténtalo más tarde.",
+      "sendSuccess": "Código enviado. Revisa tu bandeja.",
+      "codeLabel": "Código",
+      "verify": "Verificar e iniciar sesión",
+      "verifyError": "Código inválido o caducado. Inténtalo de nuevo."
+    },
+    "dashboardRoot": {
+      "title": "Panel",
+      "subtitle": "Resumen de tu trabajo, ingresos y deuda.",
+      "portalLink": "Portal"
+    },
+    "dashboard": {
+      "title": "Panel",
+      "signinPrompt": "Primero inicia sesión.",
+      "loginLink": "Ir al inicio de sesión",
+      "intro": "Tu trabajo, ingresos y prioridades de un vistazo."
+    },
+    "dashboardCard": {
+      "errors": {
+        "load": "Error al cargar"
+      },
+      "todayStatus": "Estado de hoy",
+      "debtRemaining": "Deuda restante",
+      "overpaidCredit": "Sobrepagado / crédito",
+      "cards": {
+        "todos": "Pendientes",
+        "viewTasks": "Ver tareas",
+        "essentials": "Esenciales del hogar",
+        "viewEssentials": "Ver esenciales"
+      },
+      "scope": {
+        "week": "Esta semana",
+        "month": "Este mes",
+        "year": "Este año"
+      },
+      "scopeShort": {
+        "week": "Sem.",
+        "month": "Mes",
+        "year": "Año"
+      },
+      "status": {
+        "working": "Trabajando",
+        "holiday": "Festivo",
+        "weekend": "Fin de semana",
+        "away": "Ausente",
+        "off": "Libre"
+      },
+      "workedDays": "Días trabajados",
+      "earnings": "Ingresos",
+      "gross": "Bruto {amount}",
+      "finance": "Finanzas",
+      "debtPaid": "Deuda pagada"
+    },
+    "attendance": {
+      "title": "Asistencia",
+      "signinPrompt": "Primero inicia sesión.",
+      "loginLink": "Ir al inicio de sesión",
+      "intro": "Controla tu asistencia y comparte ausencias planificadas.",
+      "titleWeekOf": "Semana del {date}",
+      "legend": {
+        "worked": "Trabajado",
+        "timeOff": "Tiempo libre",
+        "weekend": "Fin de semana",
+        "holiday": "Festivo",
+        "extra": "Extra"
+      },
+      "errors": {
+        "loadAttendance": "No se pudo cargar la asistencia",
+        "loadAbsences": "No se pudieron cargar las ausencias",
+        "loadWeekendRequests": "No se pudieron cargar las solicitudes de trabajo",
+        "createAbsence": "No se pudo crear la ausencia",
+        "cancelAbsence": "No se pudo cancelar",
+        "createWeekendRequest": "No se pudo crear la solicitud",
+        "cancelWeekendRequest": "No se pudo cancelar la solicitud"
+      },
+      "messages": {
+        "timeOffRemoved": "Tiempo libre eliminado",
+        "timeOffPlanned": "Tiempo libre planificado",
+        "weekendRequestCanceled": "Solicitud de trabajo cancelada",
+        "weekendRequestSent": "Solicitud de trabajo en fin de semana/festivo enviada"
+      },
+      "status": {
+        "needsReview": "Requiere revisión",
+        "needsReviewDetail": "Marcado como trabajado, pero necesita revisión.",
+        "holiday": "Festivo",
+        "weekend": "Fin de semana",
+        "timeOff": "Tiempo libre",
+        "worked": "Trabajado",
+        "off": "Libre",
+        "extra": "Extra",
+        "approved": "Aprobado",
+        "denied": "Denegado",
+        "pending": "Pendiente",
+        "approvedByAdmin": "Aprobado por admin",
+        "deniedByAdmin": "Denegado por admin"
+      },
+      "actions": {
+        "markTimeOff": "Marcar tiempo libre",
+        "cancelTimeOff": "Cancelar tiempo libre",
+        "requestToWork": "Solicitar trabajar",
+        "cancelWeekendRequest": "Cancelar solicitud de trabajo"
+      },
+      "plannedAbsences": "Tus ausencias planificadas",
+      "noPlannedAbsences": "Aún no hay ausencias planificadas.",
+      "emptyDays": "Sin días"
+    },
+    "payPeriods": {
+      "title": "Períodos de pago",
+      "signinPrompt": "Primero inicia sesión.",
+      "loginLink": "Ir al inicio de sesión",
+      "intro": "Resúmenes de pago de solo lectura.",
+      "errors": {
+        "load": "No se pudo cargar"
+      },
+      "summaryDays": "{count} días • bruto {gross}",
+      "empty": "Aún no hay períodos de pago",
+      "table": {
+        "period": "Período",
+        "net": "Neto",
+        "status": "Estado",
+        "summary": "díasVálidos={validDays} bruto={gross} gastos=-{expenses}",
+        "paid": "pagado"
+      },
+      "frequency": {
+        "weekly": "Semanal",
+        "monthly": "Mensual"
+      },
+      "status": {
+        "draft": "Borrador",
+        "final": "Final",
+        "paid": "Pagado"
+      }
+    },
+    "payPeriodDetailPage": {
+      "title": "Período de pago",
+      "signinPrompt": "Primero inicia sesión.",
+      "loginLink": "Ir al inicio de sesión",
+      "heading": "Período de pago • {name}",
+      "subtitle": "Desglose detallado (solo lectura).",
+      "back": "Volver"
+    },
+    "payPeriodDetail": {
+      "loading": "Cargando…",
+      "period": "Período",
+      "status": "Estado: {status}",
+      "downloadReceipt": "Descargar recibo",
+      "netPay": "Pago neto",
+      "validDays": "Días válidos: {count}",
+      "breakdown": "Desglose",
+      "gross": "Bruto: {amount}",
+      "expenses": "Gastos: -{amount}",
+      "debtCollected": "Deuda cobrada: -{amount}",
+      "loans": "Préstamos: +{amount}",
+      "errors": {
+        "load": "No se pudo cargar"
+      }
+    },
+    "todos": {
+      "title": "Pendientes",
+      "signinPrompt": "Primero inicia sesión.",
+      "loginLink": "Ir al inicio de sesión",
+      "intro": "Tus tareas asignadas.",
+      "filters": {
+        "open": "Abiertas",
+        "done": "Hechas"
+      },
+      "markDone": "Marcar como hecha",
+      "completedOn": "Hecha el {date}",
+      "createdOn": "Creada el {date}",
+      "errors": {
+        "load": "No se pudieron cargar los pendientes",
+        "update": "No se pudo actualizar el estado"
+      },
+      "empty": "Todavía no hay tareas. ¡Disfruta la calma!",
+      "items": {
+        "done": "Hecho",
+        "todo": "Por hacer"
+      },
+      "points": "{count} puntos",
+      "due": "Vence {date}"
+    },
+    "notifications": {
+      "title": "Avisos",
+      "subtitle": "Actualizaciones de tu admin y HomeHero.",
+      "empty": "Aún no hay avisos.",
+      "pushTitle": "Activar notificaciones push",
+      "pushDescription": "Recibe alertas en tu pantalla de inicio cuando tu admin envíe novedades.",
+      "pushEnable": "Activar notificaciones",
+      "pushEnabled": "Las notificaciones push están activadas en este dispositivo.",
+      "pushUnavailable": "Las notificaciones push no están disponibles en este dispositivo todavía.",
+      "pushDenied": "Las notificaciones fueron bloqueadas. Actívalas en los ajustes del navegador.",
+      "pushMissingConfig": "Falta la configuración VAPID. Pide a tu admin que configure el push.",
+      "pushSaveFailed": "No se pudo guardar este dispositivo para notificaciones.",
+      "markRead": "Marcar como leído",
+      "markAllRead": "Marcar todo como leído",
+      "showRead": "Mostrar leídos",
+      "errors": {
+        "load": "No se pudieron cargar los avisos",
+        "update": "No se pudieron actualizar los avisos",
+        "sessionExpired": "La sesión caducó. Vuelve a iniciar sesión."
+      },
+      "androidHelp": "En Android, permite las notificaciones de HomeHero y del navegador en Ajustes. Si llegan tarde, revisa las restricciones de batería y el ahorro de datos. Abre esta aplicación instalada después y pulsa Actualizar.",
+      "iosHelp": "En iPhone, abre la app instalada en la pantalla de inicio y permite las notificaciones en Ajustes de iOS. Un modo de concentración puede silenciarlas."
+    },
+    "essentials": {
+      "title": "Esenciales",
+      "signinPrompt": "Primero inicia sesión.",
+      "loginLink": "Ir al inicio de sesión",
+      "intro": "Lista de comprobación rápida de suministros diarios en casa.",
+      "question": "¿Qué hay que comprar?",
+      "searchPlaceholder": "Buscar o añadir esencial...",
+      "suggestions": "Sugerencia",
+      "addTyped": "Añadir \"{name}\"",
+      "neededSoon": "Necesario pronto",
+      "neededCount": "{count} artículos",
+      "clearList": "Vaciar lista",
+      "empty": "Aún no hay esenciales registrados.",
+      "noSuggestions": "No se encontraron sugerencias.",
+      "alreadyListed": "Este artículo ya está en la lista.",
+      "remove": "Quitar",
+      "removeLabel": "Quitar {name}",
+      "errors": {
+        "load": "No se pudieron cargar los esenciales",
+        "add": "No se pudo añadir el esencial",
+        "remove": "No se pudo quitar el esencial",
+        "clear": "No se pudo vaciar la lista",
+        "duplicate": "Este artículo ya está en la lista."
+      },
+      "messages": {
+        "cleared": "Lista vaciada."
+      },
+      "confirm": {
+        "clearTitle": "¿Vaciar todos los esenciales necesarios?",
+        "clearBody": "Esto quitará todos los artículos de la lista actual."
+      }
+    },
+    "pdfViewer": {
+      "open": "Ver recibo en PDF",
+      "title": "Recibo salarial",
+      "close": "Cerrar y volver",
+      "hint": "Tu periodo de pago sigue abierto detrás de esta vista.",
+      "save": "Guardar / compartir",
+      "saving": "Abriendo…",
+      "saveError": "No se puede guardar desde este navegador. Puedes leer el PDF aquí y cerrar esta vista.",
+      "error": "No se ha podido cargar el PDF. Cierra esta vista e inténtalo de nuevo.",
+      "loading": "Preparando tu recibo…",
+      "page": "Página {page} de {count}"
+    }
+  },
+  "admin": {
+    "layout": {
+      "title": "Admin de {appName}",
+      "userId": "{id}"
+    },
+    "navigation": {
+      "dashboard": "Panel",
+      "employees": "Empleados",
+      "todos": "Pendientes",
+      "essentials": "Esenciales",
+      "absences": "Ausencias",
+      "holidayCalendars": "Calendarios festivos",
+      "branding": "Marca",
+      "sessions": "Sesiones",
+      "unifi": "UniFi",
+      "more": "Más",
+      "signOut": "Cerrar sesión",
+      "payrollSettings": "Configuración del recibo"
+    },
+    "branding": {
+      "title": "Marca y ajustes",
+      "subtitle": "Personaliza el nombre, el logo y el icono de la app sin tocar el código.",
+      "fields": {
+        "appName": {
+          "label": "Nombre de la app",
+          "help": "Se muestra en cabeceras, títulos del documento y el manifiesto.",
+          "placeholder": "HomeHero"
+        },
+        "logoUrl": {
+          "label": "URL del logo (opcional)",
+          "help": "Usa un SVG o un enlace a una imagen para el logo.",
+          "placeholder": "https://example.com/logo.svg"
+        },
+        "iconUrl": {
+          "label": "URL del icono (opcional)",
+          "help": "Se usa para el favicon y el icono de la app.",
+          "placeholder": "https://example.com/icon.svg"
+        }
+      },
+      "actions": {
+        "reset": "Restablecer"
+      },
+      "preview": {
+        "title": "Vista previa",
+        "help": "Así se mostrará tu marca en el encabezado del portal.",
+        "logoAlt": "Vista previa del logo",
+        "logoEmpty": "Sin logo",
+        "portalLabel": "Portal del empleado",
+        "iconAlt": "Vista previa del icono",
+        "iconEmpty": "Sin icono",
+        "iconHint": "Favicon / icono de la app"
+      },
+      "saved": "Marca actualizada.",
+      "errors": {
+        "load": "No se pudieron cargar los ajustes de marca",
+        "save": "No se pudieron guardar los ajustes de marca"
+      }
+    },
+    "login": {
+      "title": "Inicio de sesión de administrador",
+      "subtitle": "Inicia sesión con correo y contraseña."
+    },
+    "loginForm": {
+      "fields": {
+        "email": "Correo",
+        "password": "Contraseña"
+      },
+      "errors": {
+        "invalidCredentials": "Credenciales inválidas",
+        "cookieMissing": "El inicio de sesión fue exitoso, pero la cookie de sesión no se guardó. Comprueba si usas HTTP mientras las cookies están marcadas como Secure o si un proxy inverso elimina Set-Cookie."
+      }
+    },
+    "dashboard": {
+      "title": "Centro de control",
+      "subtitle": "Vista rápida de las prioridades de hoy con accesos directos a los flujos de trabajo del admin.",
+      "viewAll": "Ver todo",
+      "errors": {
+        "load": "No se pudo cargar el panel"
+      },
+      "cards": {
+        "employees": {
+          "title": "Empleados",
+          "subtitle": "Empleados activos en el sistema",
+          "cta": "Ver empleados"
+        },
+        "absences": {
+          "title": "Ausencias",
+          "subtitle": "{awayNow} ausentes ahora • {upcoming} próximas",
+          "cta": "Revisar ausencias"
+        },
+        "essentials": {
+          "title": "Esenciales",
+          "subtitle": "Artículos necesarios próximamente",
+          "cta": "Abrir esenciales"
+        },
+        "todos": {
+          "title": "Pendientes",
+          "subtitle": "Tareas abiertas pendientes",
+          "cta": "Abrir pendientes"
+        },
+        "payPeriods": {
+          "title": "Períodos de pago",
+          "subtitle": "Período actual generado",
+          "cta": "Gestionar períodos"
+        }
+      },
+      "lists": {
+        "awayNow": {
+          "title": "Ausentes ahora",
+          "detail": "Hasta {date}",
+          "empty": "Nadie está ausente hoy."
+        },
+        "upcoming": {
+          "title": "Próximas ausencias",
+          "detail": "Empieza {date}",
+          "empty": "No hay ausencias próximas en las próximas dos semanas."
+        },
+        "todos": {
+          "title": "Pendientes abiertos",
+          "empty": "No hay pendientes abiertos ahora mismo."
+        },
+        "essentials": {
+          "title": "Esenciales necesarios",
+          "employee": "{name}",
+          "empty": "Aún no hay esenciales registrados."
+        }
+      }
+    },
+    "employees": {
+      "title": "Empleados",
+      "subtitle": "Crea empleados, configura la frecuencia de pago, festivos y fuente de asistencia.",
+      "newEmployee": "Nuevo empleado",
+      "calendarCount": "Calendarios festivos disponibles: {count}"
+    },
+    "employeesTable": {
+      "searchLabel": "Buscar",
+      "searchPlaceholder": "Buscar por nombre o correo",
+      "count": "{filtered} de {total} empleados",
+      "columns": {
+        "name": "Nombre",
+        "pay": "Pago",
+        "calendar": "Calendario",
+        "actions": "Acciones"
+      },
+      "noEmail": "Sin correo",
+      "none": "Ninguno",
+      "actions": {
+        "manage": "Gestionar",
+        "portalLink": "Enlace al portal"
+      },
+      "empty": "Ningún empleado coincide con tu búsqueda.",
+      "payFrequency": {
+        "weekly": "Semanal",
+        "monthly": "Mensual"
+      },
+      "attendanceSource": {
+        "hybrid": "Híbrido",
+        "manual": "Manual",
+        "unifi": "UniFi"
+      }
+    },
+    "employeeNew": {
+      "title": "Nuevo empleado",
+      "subtitle": "Crea un perfil de empleado y reglas de pago.",
+      "cancel": "Cancelar"
+    },
+    "employeeForm": {
+      "fields": {
+        "firstName": "Nombre",
+        "lastName": "Apellidos",
+        "phone": "Teléfono (E.164)",
+        "email": "Correo (para OTP)",
+        "homeAddress": "Dirección",
+        "emergencyContactName": "Nombre de contacto de emergencia",
+        "emergencyContactPhone": "Teléfono de contacto de emergencia",
+        "language": "Idioma",
+        "timezone": "Zona horaria",
+        "currency": "Moneda",
+        "dailyRate": "Tarifa diaria",
+        "openingDebt": "Saldo de deuda inicial",
+        "payFrequency": "Frecuencia de pago",
+        "attendanceSource": "Fuente de asistencia",
+        "holidayCalendar": "Calendario festivo",
+        "unifiActorId": "ID de actor de UniFi Access (anterior)"
+      },
+      "helper": {
+        "phone": "Opcional (legado).",
+        "email": "Obligatorio para el acceso OTP del portal del empleado.",
+        "emergencyContact": "Obligatorio cuando añades un nombre.",
+        "openingDebt": "Arrastre de años anteriores (importe adeudado al empleador). Permite negativo si se pagó de más."
+      },
+      "placeholders": {
+        "email": "nombre@ejemplo.com",
+        "timezone": "Europe/Madrid",
+        "currency": "EUR",
+        "dailyRate": "50.00",
+        "openingDebt": "4000.00",
+        "optional": "(opcional)"
+      },
+      "languageOptions": {
+        "english": "Inglés",
+        "spanish": "Español",
+        "persian": "فارسی",
+        "german": "Deutsch"
+      },
+      "payFrequency": {
+        "weekly": "Semanal (lun–dom)",
+        "monthly": "Mensual (fin de mes)"
+      },
+      "attendanceSource": {
+        "hybrid": "Híbrido",
+        "manual": "Manual",
+        "unifi": "UniFi"
+      },
+      "options": {
+        "none": "Ninguno"
+      },
+      "actions": {
+        "create": "Crear empleado",
+        "save": "Guardar cambios"
+      },
+      "errors": {
+        "duplicateContact": "El correo o teléfono ya está en uso por otro empleado.",
+        "save": "No se pudo guardar el empleado"
+      },
+      "helpers": {
+        "protectAttendance": "Las sugerencias por reconocimiento facial de Protect se configuran en Administración → UniFi. Esta selección no las activa ni desactiva.",
+        "unifiAccessActor": "Solo para la integración anterior de UniFi Access. Déjalo vacío para Protect; no introduzcas el nombre de la persona ni el ID de la cámara."
+      }
+    },
+    "employeeDetail": {
+      "portalLabel": "Portal:",
+      "summary": {
+        "title": "Detalles del empleado",
+        "homeAddress": "Dirección",
+        "emergencyContact": "Contacto de emergencia",
+        "notProvided": "No indicado"
+      },
+      "tabs": {
+        "attendance": "Gestionar asistencia",
+        "expenses": "Gastos de tarjeta",
+        "debt": "Libro de deuda",
+        "payPeriods": "Períodos de pago",
+        "accounting": "Centro contable"
+      },
+      "back": "Volver"
+    },
+    "employeePush": {
+      "title": "Suscripciones push",
+      "count": "{count} suscripciones",
+      "empty": "0 suscripciones en la base de datos.",
+      "actions": {
+        "test": "Enviar push de prueba"
+      },
+      "status": {
+        "sent": "Enviadas {count} notificaciones."
+      },
+      "labels": {
+        "endpoint": "Endpoint",
+        "userAgent": "Agente de usuario",
+        "createdAt": "Creado",
+        "updatedAt": "Actualizado",
+        "expirationTime": "Expira"
+      },
+      "errors": {
+        "load": "No se pudieron cargar las suscripciones.",
+        "test": "No se pudo enviar el push de prueba.",
+        "missingConfig": "Falta la configuración de VAPID."
+      }
+    },
+    "employeeAttendance": {
+      "title": "Asistencia • {name}",
+      "subtitle": "Alterna trabajado + extra autorizadas. Festivos/fines de semana resaltados; se calculan los días válidos.",
+      "back": "Volver"
+    },
+    "attendance": {
+      "errors": {
+        "load": "No se pudo cargar la asistencia",
+        "save": "No se pudo guardar. Recargando…",
+        "updateWeekendRequest": "No se pudo actualizar la solicitud de trabajo"
+      },
+      "actions": {
+        "reset": "Restablecer"
+      },
+      "confirmChangeDecision": "¿Cambiar la decisión de la solicitud?",
+      "weekOf": "Semana del {date}",
+      "pendingSummary": "Solicitudes pendientes de trabajo en fin de semana/festivo: {count}",
+      "table": {
+        "date": "Fecha",
+        "holidayWeekend": "Festivo/fin de semana",
+        "weekendRequest": "Solicitud de trabajo",
+        "entryExit": "Entrada / Salida",
+        "worked": "Trabajado",
+        "authorizedExtra": "Extra autorizada",
+        "valid": "Válido"
+      },
+      "status": {
+        "holiday": "Festivo",
+        "weekend": "Fin de semana",
+        "approved": "Aprobado",
+        "denied": "Denegado",
+        "pending": "Pendiente"
+      },
+      "entry": "Entrada {time}",
+      "exit": "Salida {time}",
+      "noEntry": "Sin entrada",
+      "noExit": "Sin salida",
+      "uncertain": "Incierto",
+      "emptyDays": "Sin días"
+    },
+    "absences": {
+      "title": "Ausencias",
+      "subtitle": "Controla quién está fuera ahora y planifica próximos descansos.",
+      "filter": {
+        "label": "Filtrar por empleado",
+        "allEmployees": "Todos los empleados"
+      },
+      "sections": {
+        "awayNow": {
+          "title": "Ausentes ahora",
+          "empty": "Nadie está ausente ahora mismo. Añade una ausencia desde asistencia o nómina."
+        },
+        "upcoming": {
+          "title": "Próximas",
+          "empty": "No hay ausencias próximas en el calendario."
+        }
+      },
+      "history": "Ausencias anteriores",
+      "noHistory": "No hay ausencias anteriores."
+    },
+    "essentials": {
+      "title": "Esenciales",
+      "subtitle": "Revisa necesidades de empleados y gestiona sugerencias simples."
+    },
+    "essentialsPanel": {
+      "needs": {
+        "title": "Esenciales necesarios ahora",
+        "subtitle": "Selecciona un empleado para revisar su checklist.",
+        "subtitleForEmployee": "Checklist de solo lectura para {name}.",
+        "employee": "Empleado",
+        "empty": "Aún no hay esenciales registrados.",
+        "inDictionary": "En el diccionario"
+      },
+      "dictionary": {
+        "title": "Sugerencias del diccionario",
+        "addTitle": "Añadir sugerencia",
+        "name": "Nombre",
+        "placeholder": "Jabón de platos, bolsas de basura...",
+        "searchPlaceholder": "Buscar sugerencias",
+        "count": "{count} sugerencias",
+        "empty": "Aún no hay sugerencias."
+      },
+      "errors": {
+        "loadNeeds": "No se pudieron cargar las necesidades",
+        "loadSuggestions": "No se pudieron cargar las sugerencias",
+        "createSuggestion": "No se pudo crear la sugerencia",
+        "duplicateSuggestion": "Esta sugerencia ya existe.",
+        "removeSuggestion": "No se pudo quitar la sugerencia",
+        "import": "No se pudieron importar las sugerencias",
+        "addToDictionary": "No se pudo añadir al diccionario",
+        "invalidImportFile": "Selecciona un archivo de texto .txt.",
+        "readImportFile": "No se pudo leer el archivo seleccionado."
+      },
+      "messages": {
+        "added": "Sugerencia añadida.",
+        "removed": "Sugerencia quitada.",
+        "imported": "Se importaron {count} sugerencias nuevas.",
+        "importNoNew": "No hay sugerencias nuevas para importar.",
+        "addedToDictionary": "Añadido al diccionario.",
+        "alreadyInDictionary": "Este artículo ya está en el diccionario.",
+        "addedMissingToDictionary": "Se añadieron {count} al diccionario."
+      },
+      "actions": {
+        "addSuggestion": "Añadir sugerencia",
+        "import": "Importar desde archivo de texto",
+        "remove": "Quitar",
+        "addToDictionary": "Añadir al diccionario",
+        "addAllMissingToDictionary": "Añadir todos los que faltan al diccionario"
+      },
+      "confirm": {
+        "removeSuggestion": "¿Quitar esta sugerencia?"
+      }
+    },
+    "todos": {
+      "title": "Pendientes",
+      "subtitle": "Crea tareas para empleados y sigue su cumplimiento.",
+      "listTitle": "Tareas",
+      "filters": {
+        "open": "Abiertas",
+        "done": "Hechas"
+      },
+      "form": {
+        "title": "Nueva tarea",
+        "employee": "Empleado",
+        "taskTitle": "Título",
+        "titlePlaceholder": "Comprar leche",
+        "description": "Descripción (opcional)",
+        "descriptionPlaceholder": "Añade cualquier detalle que deba conocer el empleado."
+      },
+      "actions": {
+        "create": "Crear tarea"
+      },
+      "messages": {
+        "created": "Tarea añadida para {name}.",
+        "employeeFallback": "empleado"
+      },
+      "doneOn": "Hecho {date}",
+      "createdOn": "Creado {date}",
+      "empty": "Aún no hay tareas.",
+      "errors": {
+        "load": "No se pudieron cargar los pendientes",
+        "create": "No se pudo crear la tarea"
+      }
+    },
+    "sessions": {
+      "title": "Sesiones",
+      "subtitle": "Tokens recientes emitidos para admins y empleados. Revoca cualquier dispositivo sospechoso.",
+      "table": {
+        "user": "Usuario",
+        "role": "Rol",
+        "created": "Creado",
+        "lastSeen": "Visto por última vez",
+        "expires": "Caduca",
+        "ip": "IP",
+        "userAgent": "Agente de usuario",
+        "actions": "Acciones"
+      },
+      "status": {
+        "revoked": "Revocado"
+      }
+    },
+    "unifi": {
+      "title": "Integración UniFi",
+      "subtitle": "Conecta las cámaras de Protect y revisa las detecciones de asistencia de personas identificadas.",
+      "back": "Volver",
+      "fields": {
+        "host": "Host UniFi",
+        "token": "Token de acceso",
+        "tlsVerify": "Forzar verificación de certificado TLS"
+      },
+      "placeholders": {
+        "host": "https://unifi.local",
+        "token": "Token de API UniFi",
+        "tokenStored": "Guardado de forma segura"
+      },
+      "helpers": {
+        "token": "Déjalo en blanco para reutilizar el token almacenado."
+      },
+      "actions": {
+        "test": "Probar conexión"
+      },
+      "errors": {
+        "save": "No se pudieron guardar los ajustes",
+        "connect": "No se pudo conectar"
+      },
+      "messages": {
+        "saved": "Ajustes UniFi guardados.",
+        "connected": "Conexión exitosa."
+      },
+      "protect": {
+        "connectionHint": "Conecta la consola que gestiona tus cámaras.",
+        "connected": "Conectado a Protect {version} · {count} cámaras",
+        "face": "Reconocimiento facial disponible",
+        "personOnly": "Sin reconocimiento facial nativo indicado",
+        "attendanceTitle": "Asistencia de una persona identificada",
+        "ruleDescription": "Cuando Protect identifique a la persona en esta cámara, se creará una sugerencia para ese día local. Un administrador debe revisarla antes de modificar la asistencia o el pago.",
+        "employee": "Empleado",
+        "choose": "Seleccionar…",
+        "personName": "Nombre de la persona en Protect",
+        "alarmName": "Nombre exacto de la alarma en Protect",
+        "recognitionHelp": "La alarma debe usar ID → Specific Face y la persona indicada. Una detección genérica de Person no confirma su identidad.",
+        "confirmRecognition": "He configurado y verificado la alarma Specific Face para esta persona y cámara.",
+        "enable": "Recibir sugerencias diarias de asistencia",
+        "setup": "Conectar la alarma de reconocimiento",
+        "step1": "En Protect → Find Anything → Faces → Manage Identifications, añade la cara y el nombre y pulsa Create Person. Comprueba el reconocimiento en la cámara seleccionada.",
+        "step2": "En Alarm Manager elige ID → Specific Face, selecciona esta persona, incluye solo esta cámara y usa Always. Indica exactamente el nombre de alarma de arriba.",
+        "step3": "Añade una acción Webhook con la URL privada de abajo y activa las sugerencias tras verificar la configuración. HomeHero no copia fotografías.",
+        "webhook": "Obtener URL privada del webhook",
+        "copy": "Copiar",
+        "copied": "Copiado",
+        "saveFirst": "Guarda primero los ajustes de conexión.",
+        "reviewTitle": "Asistencia pendiente de revisión",
+        "reviewHelp": "El reconocimiento es una evidencia para revisar, no prueba de una jornada completa. Confirma el trabajo realizado antes de aprobar; ninguna sugerencia modifica el pago automáticamente.",
+        "noSuggestions": "No hay detecciones pendientes de revisión.",
+        "openAttendance": "Ver asistencia",
+        "approve": "Confirmar día trabajado",
+        "dismiss": "Descartar",
+        "required": "Selecciona empleado, cámara de reconocimiento, nombre y nombre exacto de la alarma.",
+        "camera": "Cámara de reconocimiento",
+        "dayWindow": "A cualquier hora · una vez al día",
+        "lastDelivery": "Última entrega autenticada: {time} (Madrid). Confirma la conexión, no la asistencia.",
+        "noDelivery": "Aún no se ha recibido un webhook autenticado. Prueba la alarma con las sugerencias desactivadas."
+      }
+    },
+    "holidayCalendars": {
+      "title": "Calendarios festivos",
+      "subtitle": "Ciudades/regiones con listas de festivos importables. Se puede asignar un calendario a los empleados.",
+      "newCalendar": "Nuevo calendario",
+      "columns": {
+        "name": "Nombre",
+        "timezone": "Zona horaria",
+        "holidays": "Festivos",
+        "employees": "Empleados",
+        "actions": "Acciones"
+      },
+      "defaultLocale": "predeterminado {locale}",
+      "actions": {
+        "manage": "Gestionar"
+      },
+      "empty": "Aún no hay calendarios festivos."
+    },
+    "holidayCalendarsNew": {
+      "title": "Nuevo calendario festivo",
+      "subtitle": "Crea un calendario de ciudad/región e importa festivos (ICS/CSV/URL).",
+      "cancel": "Cancelar"
+    },
+    "holidayCalendarsForm": {
+      "fields": {
+        "name": "Nombre",
+        "country": "País",
+        "region": "Región",
+        "city": "Ciudad",
+        "defaultLocale": "Idioma predeterminado",
+        "timezone": "Zona horaria"
+      },
+      "placeholders": {
+        "name": "Barcelona",
+        "country": "ES",
+        "region": "Cataluña",
+        "city": "Barcelona",
+        "timezone": "Europe/Madrid"
+      },
+      "languageOptions": {
+        "english": "Inglés",
+        "spanish": "Español"
+      },
+      "actions": {
+        "create": "Crear calendario",
+        "save": "Guardar cambios"
+      },
+      "errors": {
+        "save": "No se pudo guardar el calendario"
+      }
+    },
+    "holidayCalendarDetail": {
+      "summary": "{holidays} festivos • {employees} empleados",
+      "back": "Volver",
+      "settings": "Ajustes",
+      "import": {
+        "title": "Importar",
+        "tip": "Consejo: empieza con una vista previa para ver duplicados y luego aplica con sobrescritura/fusión."
+      },
+      "recent": {
+        "title": "Festivos recientes",
+        "columns": {
+          "date": "Fecha",
+          "name": "Nombre",
+          "source": "Origen"
+        },
+        "empty": "Aún no hay festivos."
+      }
+    },
+    "holidayCalendarImport": {
+      "mode": {
+        "label": "Modo",
+        "skip": "Omitir duplicados",
+        "overwrite": "Sobrescribir duplicados",
+        "merge": "Fusionar nombres por idioma"
+      },
+      "dryRun": "Vista previa (solo previsualizar)",
+      "filterCity": "Filtrar eventos por ciudad: {city}",
+      "replaceExisting": "Reemplazar festivos existentes al aplicar (peligro)",
+      "urlImport": {
+        "label": "Importar por URL (.ics o .csv)",
+        "placeholder": "https://example.com/holidays.ics"
+      },
+      "fileUpload": {
+        "label": "Subir archivo ICS/CSV"
+      },
+      "csvPaste": {
+        "label": "O pega CSV",
+        "placeholder": "date,name,locale\n2026-01-01,Año Nuevo,es",
+        "help": "Columnas CSV: date,name,locale?. Si se omite el locale, se usa el predeterminado del calendario ({locale})."
+      },
+      "actions": {
+        "preview": "Previsualizar importación",
+        "apply": "Aplicar importación"
+      },
+      "errors": {
+        "importFailed": "La importación falló"
+      },
+      "result": {
+        "preview": "Vista previa",
+        "applied": "Aplicado",
+        "mode": "mode={mode}",
+        "summary": "total={total} crear={create} sobrescribir={overwrite} fusionar={merge} omitir={skip}",
+        "previewLimit": "Mostrando las primeras 50…"
+      }
+    },
+    "identityUploads": {
+      "title": "Subida de documentos",
+      "subtitle": "Guarda un pasaporte o documento de identidad y un avatar opcional con recordatorio de caducidad.",
+      "avatarAlt": "Vista previa del avatar",
+      "expiredNotice": "Los documentos caducados aparecerán aquí para que puedas recordarle al empleado que los renueve.",
+      "document": {
+        "title": "Documento",
+        "help": "Sube un PDF o imagen de pasaporte/ID. No se muestra al empleado.",
+        "expiration": "Fecha de caducidad"
+      },
+      "avatar": {
+        "title": "Avatar",
+        "help": "Visible en el portal del empleado. Usa una foto cuadrada si es posible."
+      },
+      "maxSize": "Máximo 50 MB.",
+      "recentUploads": "Subidas recientes",
+      "uploaded": "Subido {date}",
+      "visibleToEmployee": "• Visible para el empleado",
+      "actions": {
+        "preview": "Vista previa",
+        "delete": "Eliminar"
+      },
+      "status": {
+        "expired": "Caducado",
+        "valid": "Válido",
+        "noExpiry": "Sin caducidad"
+      },
+      "errors": {
+        "upload": "No se pudo preparar la subida",
+        "delete": "No se pudo eliminar el documento.",
+        "deleteUnexpected": "Error inesperado al eliminar el archivo."
+      },
+      "messages": {
+        "avatarUploaded": "Avatar subido.",
+        "documentUploaded": "Documento subido.",
+        "documentRemoved": "Documento eliminado."
+      }
+    },
+    "debtPanel": {
+      "addTransaction": "Añadir transacción",
+      "fields": {
+        "date": "Fecha",
+        "type": "Tipo",
+        "amount": "Importe ({currency})",
+        "note": "Nota"
+      },
+      "placeholders": {
+        "amount": "20.00",
+        "note": "(opcional)"
+      },
+      "types": {
+        "loanGiven": "Préstamo concedido",
+        "debtCollected": "Deuda cobrada"
+      },
+      "actions": {
+        "add": "Añadir",
+        "void": "Anular",
+        "confirmVoidTitle": "¿Anular esta transacción?",
+        "confirmVoidBody": "La transacción se marcará como anulada y no contará en los saldos."
+      },
+      "status": {
+        "voided": "Anulada"
+      },
+      "activity": {
+        "title": "Registro de actividad",
+        "empty": "Sin actividad todavía."
+      },
+      "recentTransactions": "Transacciones recientes",
+      "openingBalance": "Saldo inicial: {amount}",
+      "debtBalance": "Saldo de deuda: {amount}",
+      "table": {
+        "date": "Fecha",
+        "type": "Tipo",
+        "amount": "Importe",
+        "note": "Nota"
+      },
+      "empty": "Aún no hay transacciones",
+      "errors": {
+        "load": "No se pudo cargar",
+        "create": "No se pudo crear",
+        "delete": "No se pudo anular",
+        "amount": "Introduce un importe"
+      }
+    },
+    "cardExpensesPanel": {
+      "addExpense": "Añadir gasto",
+      "fields": {
+        "date": "Fecha",
+        "concept": "Concepto",
+        "amount": "Importe ({currency})"
+      },
+      "placeholders": {
+        "concept": "Compra",
+        "amount": "12.34"
+      },
+      "actions": {
+        "add": "Añadir",
+        "delete": "Eliminar"
+      },
+      "recentExpenses": "Gastos recientes",
+      "total": "Total: {amount}",
+      "table": {
+        "date": "Fecha",
+        "concept": "Concepto",
+        "amount": "Importe"
+      },
+      "empty": "Aún no hay gastos",
+      "errors": {
+        "load": "No se pudo cargar",
+        "create": "No se pudo crear",
+        "delete": "No se pudo eliminar",
+        "validation": "Introduce concepto e importe"
+      }
+    },
+    "payPeriodsPanel": {
+      "generateTitle": "Generar / actualizar período",
+      "anchorDate": "Cualquier fecha dentro del período",
+      "generateAction": "Generar / actualizar",
+      "tip": "Consejo: añade asistencia + gastos + deuda primero y luego actualiza.",
+      "recentPeriods": "Períodos recientes",
+      "totalNet": "Total neto (mostrado): {amount}",
+      "table": {
+        "period": "Período",
+        "validDays": "Días válidos",
+        "gross": "Bruto",
+        "expenses": "Gastos",
+        "debtDelta": "Δ deuda",
+        "net": "Neto",
+        "status": "Estado"
+      },
+      "frequency": {
+        "weekly": "Semanal",
+        "monthly": "Mensual"
+      },
+      "status": {
+        "draft": "Borrador",
+        "final": "Final",
+        "paid": "Pagado"
+      },
+      "empty": "Aún no hay períodos de pago",
+      "errors": {
+        "load": "No se pudo cargar",
+        "generate": "No se pudo generar"
+      }
+    },
+    "payPeriodDetail": {
+      "summary": {
+        "period": "Período",
+        "status": "Estado: {status}",
+        "validDays": "Días válidos",
+        "dailyRate": "Tarifa diaria: {amount}",
+        "gross": "Bruto",
+        "expenses": "Gastos: {amount}",
+        "netPay": "Pago neto",
+        "debt": "Deuda: {start} → {end}"
+      },
+      "actions": {
+        "markPaid": "Marcar como pagado ahora",
+        "refresh": "Actualizar",
+        "save": "Guardar nota/estado",
+        "downloadReceipt": "Descargar recibo (PDF)"
+      },
+      "statusSection": {
+        "title": "Estado",
+        "paidAt": "Pagado en: {date}"
+      },
+      "note": {
+        "title": "Nota de pago",
+        "placeholder": "Añadir nota de pago"
+      },
+      "sections": {
+        "attendance": "Asistencia",
+        "cardExpenses": "Gastos de tarjeta",
+        "debtLedger": "Libro de deuda"
+      },
+      "attendanceTable": {
+        "date": "Fecha",
+        "worked": "Trabajado",
+        "valid": "Válido"
+      },
+      "attendanceFlags": {
+        "holiday": "Festivo",
+        "weekend": "Fin de semana",
+        "extra": "Extra"
+      },
+      "cardExpensesTable": {
+        "date": "Fecha",
+        "concept": "Concepto",
+        "amount": "Importe"
+      },
+      "debtTable": {
+        "date": "Fecha",
+        "type": "Tipo",
+        "amount": "Importe",
+        "types": {
+          "loanGiven": "Préstamo concedido",
+          "debtCollected": "Deuda cobrada"
+        }
+      },
+      "status": {
+        "draft": "Borrador",
+        "final": "Final",
+        "paid": "Pagado"
+      },
+      "empty": "Ninguno",
+      "errors": {
+        "load": "No se pudo cargar",
+        "markPaid": "No se pudo marcar como pagado",
+        "save": "No se pudieron guardar los cambios"
+      }
+    },
+    "actions": {
+      "delete": "Eliminar",
+      "confirmTitle": "Confirmar eliminación",
+      "confirmBody": "¿Eliminar «{name}»? Esta acción no se puede deshacer. El historial financiero está protegido.",
+      "cancel": "Cancelar",
+      "deleting": "Eliminando…",
+      "failed": "No se pudo completar la acción. Inténtalo de nuevo.",
+      "edit": "Editar",
+      "reopen": "Reabrir",
+      "complete": "Completar",
+      "save": "Guardar",
+      "draft": "Borrador",
+      "menu": "Menú",
+      "language": "Idioma"
+    },
+    "pushDiagnostics": {
+      "title": "Diagnóstico de entregas",
+      "healthy": "El servicio de entregas está activo",
+      "unhealthy": "El servicio no responde; los mensajes pueden retrasarse",
+      "empty": "Las nuevas entregas aparecerán aquí. No se reenvían avisos antiguos.",
+      "accepted": "Aceptado por el servicio push",
+      "displayed": "El dispositivo confirmó la visualización",
+      "clicked": "Abierto en el dispositivo",
+      "pending": "En espera / reintentando",
+      "failed": "Entrega fallida",
+      "expired": "Suscripción caducada",
+      "cancelled": "Leído / caducado",
+      "attempts": "Intentos: {count}",
+      "testResult": "Aceptados por el servicio push: {sent}. Fallidos: {failed}. No confirma la visualización en el teléfono."
+    },
+    "weeklyEmail": {
+      "title": "Recibo semanal por correo",
+      "schedule": "Domingos a las 20:00, Europe/Madrid. Desde la semana actual. No se envían semanas anteriores automáticamente.",
+      "enabled": "Enviar el PDF semanal a esta persona",
+      "error": "No se pudo guardar o cargar la configuración.",
+      "settings": "Configuración del recibo",
+      "settingsHelp": "Estos datos aparecen en los recibos PDF. Introduce únicamente datos verificados del empleador.",
+      "employerName": "Nombre del empleador/a",
+      "employerTaxId": "NIF / NIE del empleador/a",
+      "employerAddress": "Domicilio del empleador/a",
+      "saved": "Configuración guardada.",
+      "download": "Descargar recibo en PDF"
+    }
+  }
+}

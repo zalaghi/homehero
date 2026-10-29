@@ -1,0 +1,1177 @@
+{
+  "app": {
+    "name": "HomeHero"
+  },
+  "home": {
+    "title": "HomeHero",
+    "subtitle": "حقوق، حضور و غیاب، کسورات و رسیدها در یک‌جا."
+  },
+  "common": {
+    "prev": "قبلی",
+    "next": "بعدی",
+    "loading": "در حال بارگذاری…",
+    "cancel": "انصراف",
+    "save": "ذخیره",
+    "saving": "در حال ذخیره…",
+    "edit": "ویرایش",
+    "yes": "بله",
+    "no": "خیر",
+    "signIn": "ورود",
+    "signingIn": "در حال ورود…",
+    "sending": "در حال ارسال…",
+    "verifying": "در حال تأیید…",
+    "revoke": "ابطال",
+    "approve": "تأیید",
+    "deny": "رد",
+    "running": "در حال اجرا…",
+    "refresh": "به‌روزرسانی"
+  },
+  "portal": {
+    "root": {
+      "title": "پورتال کارمند",
+      "subtitle": "برای ورود، لینک شخصی پورتال را که کارفرما داده باز کنید.",
+      "codeLabel": "کد پورتال را وارد کنید",
+      "codePlaceholder": "کد یا لینک پورتال را اینجا بچسبانید",
+      "codeHelp": "می‌توانید لینک کامل پورتال را بچسبانید یا کدی را که کارفرما داده وارد کنید.",
+      "codeError": "برای ادامه، کد کارمند را وارد کنید.",
+      "openPortal": "ورود",
+      "notYou": "شما نیستید؟",
+      "tipTitle": "نکته",
+      "tipBody": "به‌نظر می‌رسد وارد نشده‌اید. از لینک یکتای پورتالی که دریافت کرده‌اید استفاده کنید.",
+      "adminLogin": "ورود ادمین"
+    },
+    "navigation": {
+      "dashboard": "داشبورد",
+      "attendance": "حضور و غیاب",
+      "pay": "حقوق",
+      "todos": "کارهای انجام‌دادنی",
+      "essentials": "اقلام ضروری",
+      "notifications": "اعلان‌ها"
+    },
+    "header": {
+      "quickOverview": "نمای کلی سریع",
+      "title": "پورتال {appName}",
+      "avatarAlt": "آواتار",
+      "refresh": "به‌روزرسانی",
+      "nav": {
+        "dashboard": "داشبورد",
+        "attendance": "حضور و غیاب",
+        "payPeriods": "دوره‌های پرداخت",
+        "todos": "کارهای انجام‌دادنی",
+        "essentials": "اقلام ضروری",
+        "notifications": "اعلان‌ها"
+      }
+    },
+    "login": {
+      "title": "پورتال کارمند",
+      "subtitle": "با کد یک‌بارمصرفی که به ایمیل شما ارسال می‌شود وارد شوید.",
+      "emailOnFile": "ایمیل ثبت‌شده: {email}",
+      "emailMissing": "تنظیم نشده (از ادمین بپرسید)",
+      "emailLabel": "ایمیل",
+      "emailPlaceholder": "you@example.com",
+      "emailHelp": "ایمیلی را که در سیستم ثبت شده وارد کنید. کد یک‌بارمصرف را به صندوق ورودی‌تان می‌فرستیم.",
+      "sendCode": "ارسال کد",
+      "sendError": "ارسال کد ممکن نبود. بعداً دوباره تلاش کنید.",
+      "sendSuccess": "کد ارسال شد. صندوق ورودی ایمیل را بررسی کنید.",
+      "codeLabel": "کد",
+      "verify": "تأیید و ورود",
+      "verifyError": "کد نامعتبر یا منقضی شده است. دوباره تلاش کنید."
+    },
+    "dashboardRoot": {
+      "title": "داشبورد",
+      "subtitle": "نمای کلی کار، درآمد و بدهی شما.",
+      "portalLink": "پورتال"
+    },
+    "dashboard": {
+      "title": "داشبورد",
+      "signinPrompt": "لطفاً اول وارد شوید.",
+      "loginLink": "رفتن به صفحهٔ ورود",
+      "intro": "کار، درآمد و اولویت‌ها در یک نگاه."
+    },
+    "dashboardCard": {
+      "errors": {
+        "load": "بارگذاری ناموفق بود"
+      },
+      "todayStatus": "وضعیت امروز",
+      "debtRemaining": "باقی‌ماندهٔ بدهی",
+      "overpaidCredit": "اضافه‌پرداخت / اعتبار",
+      "cards": {
+        "todos": "کارهای انجام‌دادنی",
+        "viewTasks": "مشاهدهٔ کارها",
+        "essentials": "اقلام ضروری خانه",
+        "viewEssentials": "مشاهدهٔ اقلام ضروری"
+      },
+      "scope": {
+        "week": "این هفته",
+        "month": "این ماه",
+        "year": "امسال"
+      },
+      "scopeShort": {
+        "week": "هفته",
+        "month": "ماه",
+        "year": "سال"
+      },
+      "status": {
+        "working": "در حال کار",
+        "holiday": "تعطیل",
+        "weekend": "آخر هفته",
+        "away": "غایب",
+        "off": "مرخصی"
+      },
+      "workedDays": "روزهای کارکرد",
+      "earnings": "درآمد",
+      "gross": "ناخالص {amount}",
+      "finance": "مالی",
+      "debtPaid": "بدهی پرداخت‌شده"
+    },
+    "attendance": {
+      "title": "حضور و غیاب",
+      "signinPrompt": "لطفاً اول وارد شوید.",
+      "loginLink": "رفتن به صفحهٔ ورود",
+      "intro": "حضور و غیاب خود را دنبال کنید و مرخصی‌های برنامه‌ریزی‌شده را ثبت کنید.",
+      "titleWeekOf": "هفته‌ی {date}",
+      "legend": {
+        "worked": "کارکرده",
+        "timeOff": "مرخصی",
+        "weekend": "آخر هفته",
+        "holiday": "تعطیل",
+        "extra": "اضافه‌کاری"
+      },
+      "errors": {
+        "loadAttendance": "بارگذاری حضور و غیاب ممکن نبود",
+        "loadAbsences": "بارگذاری مرخصی‌ها ممکن نبود",
+        "loadWeekendRequests": "بارگذاری درخواست‌های کار ممکن نبود",
+        "createAbsence": "ایجاد مرخصی ممکن نبود",
+        "cancelAbsence": "لغو ممکن نبود",
+        "createWeekendRequest": "ایجاد درخواست ممکن نبود",
+        "cancelWeekendRequest": "لغو درخواست کار ممکن نبود"
+      },
+      "messages": {
+        "timeOffRemoved": "مرخصی حذف شد",
+        "timeOffPlanned": "مرخصی برنامه‌ریزی شد",
+        "weekendRequestCanceled": "درخواست کار لغو شد",
+        "weekendRequestSent": "درخواست کار در آخر هفته/تعطیل ارسال شد"
+      },
+      "status": {
+        "needsReview": "نیازمند بررسی",
+        "needsReviewDetail": "به‌عنوان کارکرده علامت خورده، اما نیاز به بررسی دارد.",
+        "holiday": "تعطیل",
+        "weekend": "آخر هفته",
+        "timeOff": "مرخصی",
+        "worked": "کارکرده",
+        "off": "مرخصی",
+        "extra": "اضافه‌کاری",
+        "approved": "تأیید شده",
+        "denied": "رد شده",
+        "pending": "معلق",
+        "approvedByAdmin": "تأیید توسط ادمین",
+        "deniedByAdmin": "رد توسط ادمین"
+      },
+      "actions": {
+        "markTimeOff": "ثبت مرخصی",
+        "cancelTimeOff": "لغو مرخصی",
+        "requestToWork": "درخواست کار",
+        "cancelWeekendRequest": "لغو درخواست کار"
+      },
+      "plannedAbsences": "مرخصی‌های برنامه‌ریزی‌شدهٔ شما",
+      "noPlannedAbsences": "هنوز مرخصی برنامه‌ریزی‌شده‌ای ندارید.",
+      "emptyDays": "بدون روز"
+    },
+    "payPeriods": {
+      "title": "دوره‌های پرداخت",
+      "signinPrompt": "لطفاً اول وارد شوید.",
+      "loginLink": "رفتن به صفحهٔ ورود",
+      "intro": "خلاصه‌های پرداخت فقط برای مشاهده.",
+      "errors": {
+        "load": "بارگذاری ناموفق بود"
+      },
+      "summaryDays": "{count} روز • ناخالص {gross}",
+      "empty": "هنوز دورهٔ پرداختی وجود ندارد",
+      "table": {
+        "period": "دوره",
+        "net": "خالص",
+        "status": "وضعیت",
+        "summary": "روزهای معتبر={validDays} ناخالص={gross} هزینه‌ها=-{expenses}",
+        "paid": "پرداخت‌شده"
+      },
+      "frequency": {
+        "weekly": "هفتگی",
+        "monthly": "ماهانه"
+      },
+      "status": {
+        "draft": "پیش‌نویس",
+        "final": "نهایی",
+        "paid": "پرداخت‌شده"
+      }
+    },
+    "payPeriodDetailPage": {
+      "title": "دورهٔ پرداخت",
+      "signinPrompt": "لطفاً اول وارد شوید.",
+      "loginLink": "رفتن به صفحهٔ ورود",
+      "heading": "دورهٔ پرداخت • {name}",
+      "subtitle": "ریز جزئیات (فقط برای مشاهده).",
+      "back": "بازگشت"
+    },
+    "payPeriodDetail": {
+      "loading": "در حال بارگذاری…",
+      "period": "دوره",
+      "status": "وضعیت: {status}",
+      "downloadReceipt": "دانلود رسید",
+      "netPay": "حقوق خالص",
+      "validDays": "روزهای معتبر: {count}",
+      "breakdown": "ریز",
+      "gross": "ناخالص: {amount}",
+      "expenses": "هزینه‌ها: -{amount}",
+      "debtCollected": "وصول بدهی: -{amount}",
+      "loans": "وام‌ها: +{amount}",
+      "errors": {
+        "load": "بارگذاری ناموفق بود"
+      }
+    },
+    "todos": {
+      "title": "کارهای انجام‌دادنی",
+      "signinPrompt": "لطفاً اول وارد شوید.",
+      "loginLink": "رفتن به صفحهٔ ورود",
+      "intro": "کارهای اختصاص‌داده‌شده به شما.",
+      "filters": {
+        "open": "باز",
+        "done": "انجام‌شده"
+      },
+      "markDone": "علامت‌گذاری به‌عنوان انجام‌شده",
+      "completedOn": "انجام‌شده در {date}",
+      "createdOn": "ایجاد شده در {date}",
+      "errors": {
+        "load": "بارگذاری کارهای انجام‌دادنی ناموفق بود",
+        "update": "به‌روزرسانی وضعیت ناموفق بود"
+      },
+      "empty": "هنوز کاری ندارید. از آرامش لذت ببرید!",
+      "items": {
+        "done": "انجام‌شده",
+        "todo": "برای انجام"
+      },
+      "points": "{count} امتیاز",
+      "due": "موعد {date}"
+    },
+    "notifications": {
+      "title": "اعلان‌ها",
+      "subtitle": "به‌روزرسانی‌های ادمین و HomeHero.",
+      "empty": "هنوز اعلانی ندارید.",
+      "pushTitle": "فعال‌سازی اعلان‌های پوش",
+      "pushDescription": "وقتی ادمین به‌روزرسانی می‌فرستد، روی صفحهٔ اصلی اعلان بگیرید.",
+      "pushEnable": "فعال‌سازی اعلان‌ها",
+      "pushEnabled": "اعلان‌های پوش روی این دستگاه فعال است.",
+      "pushUnavailable": "اعلان‌های پوش هنوز روی این دستگاه در دسترس نیست.",
+      "pushDenied": "اعلان‌ها مسدود شده‌اند. از تنظیمات مرورگر فعالشان کنید.",
+      "pushMissingConfig": "پیکربندی VAPID وجود ندارد. از ادمین بخواهید تنظیمات پوش را انجام دهد.",
+      "pushSaveFailed": "ذخیرهٔ این دستگاه برای اعلان‌ها ممکن نبود.",
+      "markRead": "علامت‌گذاری به‌عنوان خوانده‌شده",
+      "markAllRead": "علامت‌گذاری همه به‌عنوان خوانده‌شده",
+      "showRead": "نمایش خوانده‌شده‌ها",
+      "errors": {
+        "load": "بارگذاری اعلان‌ها ناموفق بود",
+        "update": "به‌روزرسانی اعلان‌ها ناموفق بود",
+        "sessionExpired": "نشست منقضی شد. دوباره وارد شوید."
+      },
+      "androidHelp": "در تنظیمات Android، اعلان‌های HomeHero و مرورگر را مجاز کنید. اگر اعلان دیر می‌رسد، محدودیت باتری و صرفه‌جویی داده را بررسی کنید. سپس این برنامهٔ نصب‌شده را باز کنید و «تازه‌سازی» را بزنید.",
+      "iosHelp": "در آیفون برنامه را از آیکون نصب‌شده باز کنید و اعلان‌ها را در تنظیمات iOS مجاز کنید. حالت Focus ممکن است اعلان را بی‌صدا کند."
+    },
+    "essentials": {
+      "title": "اقلام ضروری",
+      "signinPrompt": "لطفاً اول وارد شوید.",
+      "loginLink": "رفتن به صفحهٔ ورود",
+      "intro": "چک‌لیست سریع برای ملزومات روزمره در خانه.",
+      "question": "چه چیزی باید خریده شود؟",
+      "searchPlaceholder": "جستجو یا افزودن قلم ضروری...",
+      "suggestions": "پیشنهاد",
+      "addTyped": "افزودن «{name}»",
+      "neededSoon": "به‌زودی لازم",
+      "neededCount": "{count} قلم",
+      "clearList": "پاک کردن لیست",
+      "empty": "هنوز اقلام ضروری ثبت نشده‌اند.",
+      "noSuggestions": "پیشنهادی پیدا نشد.",
+      "alreadyListed": "این قلم قبلاً در لیست است.",
+      "remove": "حذف",
+      "removeLabel": "حذف {name}",
+      "errors": {
+        "load": "بارگذاری اقلام ضروری ناموفق بود",
+        "add": "افزودن قلم ضروری ناموفق بود",
+        "remove": "حذف قلم ضروری ناموفق بود",
+        "clear": "پاک کردن لیست ناموفق بود",
+        "duplicate": "این قلم قبلاً در لیست است."
+      },
+      "messages": {
+        "cleared": "لیست پاک شد."
+      },
+      "confirm": {
+        "clearTitle": "همهٔ اقلام ضروری لازم پاک شوند؟",
+        "clearBody": "این کار همهٔ اقلام را از لیست فعلی حذف می‌کند."
+      }
+    },
+    "pdfViewer": {
+      "open": "مشاهدهٔ فیش PDF",
+      "title": "فیش حقوقی",
+      "close": "بستن و برگشت",
+      "hint": "صفحهٔ دورهٔ پرداخت پشت این پیش‌نمایش باز می‌ماند.",
+      "save": "ذخیره / اشتراک",
+      "saving": "در حال باز کردن…",
+      "saveError": "ذخیره در این مرورگر ممکن نیست. همچنان می‌توانی PDF را اینجا بخوانی و پیش‌نمایش را ببندی.",
+      "error": "PDF بارگذاری نشد. پیش‌نمایش را ببند و دوباره تلاش کن.",
+      "loading": "در حال آماده‌سازی فیش…",
+      "page": "صفحهٔ {page} از {count}"
+    }
+  },
+  "admin": {
+    "layout": {
+      "title": "ادمین {appName}",
+      "userId": "{id}"
+    },
+    "navigation": {
+      "dashboard": "داشبورد",
+      "employees": "کارمندان",
+      "todos": "کارهای انجام‌دادنی",
+      "essentials": "اقلام ضروری",
+      "absences": "مرخصی‌ها",
+      "holidayCalendars": "تقویم‌های تعطیلات",
+      "branding": "برندینگ",
+      "sessions": "نشست‌ها",
+      "unifi": "UniFi",
+      "more": "بیشتر",
+      "signOut": "خروج",
+      "payrollSettings": "تنظیمات فیش حقوقی"
+    },
+    "branding": {
+      "title": "برندینگ و تنظیمات",
+      "subtitle": "نام، لوگو و آیکن اپ را بدون دست‌زدن به کد شخصی‌سازی کنید.",
+      "fields": {
+        "appName": {
+          "label": "نام اپ",
+          "help": "در هدرها، عنوان سند و مانیفست نمایش داده می‌شود.",
+          "placeholder": "HomeHero"
+        },
+        "logoUrl": {
+          "label": "آدرس لوگو (اختیاری)",
+          "help": "برای لوگو از SVG یا لینک تصویر استفاده کنید.",
+          "placeholder": "https://example.com/logo.svg"
+        },
+        "iconUrl": {
+          "label": "آدرس آیکن (اختیاری)",
+          "help": "برای favicon و آیکن اپ استفاده می‌شود.",
+          "placeholder": "https://example.com/icon.svg"
+        }
+      },
+      "actions": {
+        "reset": "بازنشانی"
+      },
+      "preview": {
+        "title": "پیش‌نمایش",
+        "help": "برند شما در هدر پورتال این‌طور نمایش داده می‌شود.",
+        "logoAlt": "پیش‌نمایش لوگو",
+        "logoEmpty": "بدون لوگو",
+        "portalLabel": "پورتال کارمند",
+        "iconAlt": "پیش‌نمایش آیکن",
+        "iconEmpty": "بدون آیکن",
+        "iconHint": "favicon / آیکن اپ"
+      },
+      "saved": "برندینگ به‌روزرسانی شد.",
+      "errors": {
+        "load": "بارگذاری تنظیمات برندینگ ناموفق بود",
+        "save": "ذخیرهٔ تنظیمات برندینگ ناموفق بود"
+      }
+    },
+    "login": {
+      "title": "ورود ادمین",
+      "subtitle": "با ایمیل و رمز عبور وارد شوید."
+    },
+    "loginForm": {
+      "fields": {
+        "email": "ایمیل",
+        "password": "رمز عبور"
+      },
+      "errors": {
+        "invalidCredentials": "اعتبارنامه نامعتبر است",
+        "cookieMissing": "ورود موفق بود اما کوکی نشست ذخیره نشد. بررسی کنید از HTTP استفاده نمی‌کنید در حالی که کوکی‌ها Secure هستند، یا اینکه reverse proxy هدر Set-Cookie را حذف می‌کند."
+      }
+    },
+    "dashboard": {
+      "title": "مرکز کنترل",
+      "subtitle": "نمای سریع از اولویت‌های امروز با دسترسی مستقیم به جریان‌های کاری ادمین.",
+      "viewAll": "مشاهدهٔ همه",
+      "errors": {
+        "load": "بارگذاری داشبورد ناموفق بود"
+      },
+      "cards": {
+        "employees": {
+          "title": "کارمندان",
+          "subtitle": "کارمندان فعال در سیستم",
+          "cta": "مشاهدهٔ کارمندان"
+        },
+        "absences": {
+          "title": "مرخصی‌ها",
+          "subtitle": "{awayNow} اکنون خارج • {upcoming} پیشِ‌رو",
+          "cta": "بررسی مرخصی‌ها"
+        },
+        "essentials": {
+          "title": "اقلام ضروری",
+          "subtitle": "اقلامی که به‌زودی لازم هستند",
+          "cta": "باز کردن اقلام ضروری"
+        },
+        "todos": {
+          "title": "کارهای انجام‌دادنی",
+          "subtitle": "کارهای بازِ در انتظار",
+          "cta": "باز کردن کارها"
+        },
+        "payPeriods": {
+          "title": "دوره‌های پرداخت",
+          "subtitle": "دورهٔ جاری تولید شده",
+          "cta": "مدیریت دوره‌های پرداخت"
+        }
+      },
+      "lists": {
+        "awayNow": {
+          "title": "اکنون خارج",
+          "detail": "تا {date}",
+          "empty": "امروز کسی خارج نیست."
+        },
+        "upcoming": {
+          "title": "مرخصی‌های پیشِ‌رو",
+          "detail": "شروع از {date}",
+          "empty": "در دو هفتهٔ آینده مرخصی پیشِ‌رویی نیست."
+        },
+        "todos": {
+          "title": "کارهای باز",
+          "empty": "فعلاً کاری باز نیست."
+        },
+        "essentials": {
+          "title": "اقلام ضروری لازم",
+          "employee": "{name}",
+          "empty": "هنوز اقلام ضروری ثبت نشده‌اند."
+        }
+      }
+    },
+    "employees": {
+      "title": "کارمندان",
+      "subtitle": "کارمند ایجاد کنید، تناوب پرداخت، تعطیلات و منبع حضور و غیاب را تنظیم کنید.",
+      "newEmployee": "کارمند جدید",
+      "calendarCount": "تقویم‌های تعطیلات در دسترس: {count}"
+    },
+    "employeesTable": {
+      "searchLabel": "جستجو",
+      "searchPlaceholder": "جستجو بر اساس نام یا ایمیل",
+      "count": "{filtered} از {total} کارمند",
+      "columns": {
+        "name": "نام",
+        "pay": "حقوق",
+        "calendar": "تقویم",
+        "actions": "اقدامات"
+      },
+      "noEmail": "بدون ایمیل",
+      "none": "هیچ",
+      "actions": {
+        "manage": "مدیریت",
+        "portalLink": "لینک پورتال"
+      },
+      "empty": "هیچ کارمندی با جستجوی شما پیدا نشد.",
+      "payFrequency": {
+        "weekly": "هفتگی",
+        "monthly": "ماهانه"
+      },
+      "attendanceSource": {
+        "hybrid": "ترکیبی",
+        "manual": "دستی",
+        "unifi": "UniFi"
+      }
+    },
+    "employeeNew": {
+      "title": "کارمند جدید",
+      "subtitle": "پروفایل کارمند و قوانین پرداخت را ایجاد کنید.",
+      "cancel": "انصراف"
+    },
+    "employeeForm": {
+      "fields": {
+        "firstName": "نام",
+        "lastName": "نام خانوادگی",
+        "phone": "تلفن (E.164)",
+        "email": "ایمیل (برای ورود OTP)",
+        "homeAddress": "آدرس",
+        "emergencyContactName": "نام تماس اضطراری",
+        "emergencyContactPhone": "تلفن تماس اضطراری",
+        "language": "زبان",
+        "timezone": "منطقهٔ زمانی",
+        "currency": "ارز",
+        "dailyRate": "نرخ روزانه",
+        "openingDebt": "ماندهٔ اولیهٔ بدهی",
+        "payFrequency": "تناوب پرداخت",
+        "attendanceSource": "منبع حضور و غیاب",
+        "holidayCalendar": "تقویم تعطیلات",
+        "unifiActorId": "شناسهٔ فرد در UniFi Access (قدیمی)"
+      },
+      "helper": {
+        "phone": "اختیاری (قدیمی).",
+        "email": "برای ورود OTP پورتال کارمند الزامی است.",
+        "emergencyContact": "زمانی که نام اضافه می‌کنید الزامی است.",
+        "openingDebt": "مانده از سال‌های قبل (مبلغ بدهی به کارفرما). امکان مقدار منفی در صورت اضافه‌پرداخت."
+      },
+      "placeholders": {
+        "email": "name@example.com",
+        "timezone": "Europe/Madrid",
+        "currency": "EUR",
+        "dailyRate": "50.00",
+        "openingDebt": "4000.00",
+        "optional": "(اختیاری)"
+      },
+      "languageOptions": {
+        "english": "انگلیسی",
+        "spanish": "اسپانیایی",
+        "persian": "فارسی",
+        "german": "Deutsch"
+      },
+      "payFrequency": {
+        "weekly": "هفتگی (دوشنبه–یکشنبه)",
+        "monthly": "ماهانه (پایان ماه)"
+      },
+      "attendanceSource": {
+        "hybrid": "ترکیبی",
+        "manual": "دستی",
+        "unifi": "UniFi"
+      },
+      "options": {
+        "none": "هیچ"
+      },
+      "actions": {
+        "create": "ایجاد کارمند",
+        "save": "ذخیرهٔ تغییرات"
+      },
+      "errors": {
+        "duplicateContact": "ایمیل یا تلفن قبلاً برای کارمند دیگری استفاده شده است.",
+        "save": "ذخیرهٔ کارمند ممکن نبود"
+      },
+      "helpers": {
+        "protectAttendance": "حضور پیشنهادیِ تشخیص چهرهٔ Protect جداگانه در مدیریت ← UniFi تنظیم می‌شود. این گزینه آن را روشن یا خاموش نمی‌کند.",
+        "unifiAccessActor": "فقط برای اتصال قدیمی UniFi Access است. برای تشخیص چهرهٔ Protect خالی بگذارید؛ نام فرد یا شناسهٔ دوربین را اینجا وارد نکنید."
+      }
+    },
+    "employeeDetail": {
+      "portalLabel": "پورتال:",
+      "summary": {
+        "title": "جزئیات کارمند",
+        "homeAddress": "آدرس",
+        "emergencyContact": "تماس اضطراری",
+        "notProvided": "ارائه نشده"
+      },
+      "tabs": {
+        "attendance": "مدیریت حضور و غیاب",
+        "expenses": "هزینه‌های کارت",
+        "debt": "دفتر بدهی",
+        "payPeriods": "دوره‌های پرداخت",
+        "accounting": "مرکز حسابداری"
+      },
+      "back": "بازگشت"
+    },
+    "employeePush": {
+      "title": "اشتراک‌های پوش",
+      "count": "{count} اشتراک",
+      "empty": "۰ اشتراک در پایگاه داده.",
+      "actions": {
+        "test": "ارسال پوشِ آزمایشی"
+      },
+      "status": {
+        "sent": "{count} اعلان ارسال شد."
+      },
+      "labels": {
+        "endpoint": "نقطهٔ پایانی",
+        "userAgent": "عامل کاربر",
+        "createdAt": "ایجاد",
+        "updatedAt": "به‌روزرسانی",
+        "expirationTime": "انقضا"
+      },
+      "errors": {
+        "load": "بارگذاری اشتراک‌ها ناموفق بود.",
+        "test": "ارسال پوشِ آزمایشی ناموفق بود.",
+        "missingConfig": "پیکربندی VAPID وجود ندارد."
+      }
+    },
+    "employeeAttendance": {
+      "title": "حضور و غیاب • {name}",
+      "subtitle": "کارکرد + اضافه‌کاری مجاز را تغییر دهید. تعطیلات/آخرهفته‌ها برجسته می‌شوند؛ روزهای معتبر محاسبه می‌شوند.",
+      "back": "بازگشت"
+    },
+    "attendance": {
+      "errors": {
+        "load": "بارگذاری حضور و غیاب ناموفق بود",
+        "save": "ذخیره ناموفق بود. در حال بارگذاری مجدد…",
+        "updateWeekendRequest": "به‌روزرسانی درخواست کار ناموفق بود"
+      },
+      "actions": {
+        "reset": "بازنشانی"
+      },
+      "confirmChangeDecision": "تصمیم درخواست کار تغییر کند؟",
+      "weekOf": "هفته‌ی {date}",
+      "pendingSummary": "درخواست‌های معلقِ کار در آخر هفته/تعطیل: {count}",
+      "table": {
+        "date": "تاریخ",
+        "holidayWeekend": "تعطیل/آخر هفته",
+        "weekendRequest": "درخواست کار",
+        "entryExit": "ورود / خروج",
+        "worked": "کارکرده",
+        "authorizedExtra": "اضافه‌کاری مجاز",
+        "valid": "معتبر"
+      },
+      "status": {
+        "holiday": "تعطیل",
+        "weekend": "آخر هفته",
+        "approved": "تأیید شده",
+        "denied": "رد شده",
+        "pending": "معلق"
+      },
+      "entry": "ورود {time}",
+      "exit": "خروج {time}",
+      "noEntry": "بدون ورود",
+      "noExit": "بدون خروج",
+      "uncertain": "نامشخص",
+      "emptyDays": "بدون روز"
+    },
+    "absences": {
+      "title": "مرخصی‌ها",
+      "subtitle": "ببینید چه کسی الان خارج است و برای مرخصی‌های آینده برنامه‌ریزی کنید.",
+      "filter": {
+        "label": "فیلتر بر اساس کارمند",
+        "allEmployees": "همهٔ کارمندان"
+      },
+      "sections": {
+        "awayNow": {
+          "title": "اکنون خارج",
+          "empty": "فعلاً کسی خارج نیست. از بخش حضور و غیاب یا حقوق یک مرخصی اضافه کنید."
+        },
+        "upcoming": {
+          "title": "پیشِ‌رو",
+          "empty": "هیچ مرخصی پیشِ‌رویی در تقویم نیست."
+        }
+      },
+      "history": "غیبت‌های گذشته",
+      "noHistory": "غیبت قبلی ثبت نشده است."
+    },
+    "essentials": {
+      "title": "اقلام ضروری",
+      "subtitle": "نیازهای کارمندان را ببینید و پیشنهادهای ساده را مدیریت کنید."
+    },
+    "essentialsPanel": {
+      "needs": {
+        "title": "اقلام ضروری مورد نیاز",
+        "subtitle": "یک کارمند را برای بررسی چک‌لیست انتخاب کنید.",
+        "subtitleForEmployee": "چک‌لیست فقط‌خواندنی برای {name}.",
+        "employee": "کارمند",
+        "empty": "هنوز اقلام ضروری ثبت نشده‌اند.",
+        "inDictionary": "در واژه‌نامه"
+      },
+      "dictionary": {
+        "title": "پیشنهادهای واژه‌نامه",
+        "addTitle": "افزودن پیشنهاد",
+        "name": "نام",
+        "placeholder": "مایع ظرفشویی، کیسه زباله...",
+        "searchPlaceholder": "جستجوی پیشنهادها",
+        "count": "{count} پیشنهاد",
+        "empty": "هنوز پیشنهادی نیست."
+      },
+      "errors": {
+        "loadNeeds": "بارگذاری نیازهای کارمند ناموفق بود",
+        "loadSuggestions": "بارگذاری پیشنهادها ناموفق بود",
+        "createSuggestion": "ایجاد پیشنهاد ناموفق بود",
+        "duplicateSuggestion": "این پیشنهاد قبلاً وجود دارد.",
+        "removeSuggestion": "حذف پیشنهاد ناموفق بود",
+        "import": "وارد کردن پیشنهادها ناموفق بود",
+        "addToDictionary": "افزودن به واژه‌نامه ناموفق بود",
+        "invalidImportFile": "یک فایل متنی .txt انتخاب کنید.",
+        "readImportFile": "خواندن فایل انتخاب‌شده ممکن نبود."
+      },
+      "messages": {
+        "added": "پیشنهاد اضافه شد.",
+        "removed": "پیشنهاد حذف شد.",
+        "imported": "{count} پیشنهاد جدید وارد شد.",
+        "importNoNew": "پیشنهاد جدیدی برای وارد کردن نیست.",
+        "addedToDictionary": "به واژه‌نامه اضافه شد.",
+        "alreadyInDictionary": "این قلم قبلاً در واژه‌نامه است.",
+        "addedMissingToDictionary": "{count} مورد به واژه‌نامه اضافه شد."
+      },
+      "actions": {
+        "addSuggestion": "افزودن پیشنهاد",
+        "import": "وارد کردن از فایل متنی",
+        "remove": "حذف",
+        "addToDictionary": "افزودن به واژه‌نامه",
+        "addAllMissingToDictionary": "افزودن همهٔ موارد جاافتاده به واژه‌نامه"
+      },
+      "confirm": {
+        "removeSuggestion": "این پیشنهاد حذف شود؟"
+      }
+    },
+    "todos": {
+      "title": "کارهای انجام‌دادنی",
+      "subtitle": "برای کارمندان کار بسازید و وضعیت انجام را دنبال کنید.",
+      "listTitle": "کارها",
+      "filters": {
+        "open": "باز",
+        "done": "انجام‌شده"
+      },
+      "form": {
+        "title": "کار جدید",
+        "employee": "کارمند",
+        "taskTitle": "عنوان",
+        "titlePlaceholder": "خرید شیر",
+        "description": "توضیحات (اختیاری)",
+        "descriptionPlaceholder": "هر جزئیاتی که کارمند باید بداند را اضافه کنید."
+      },
+      "actions": {
+        "create": "ایجاد کار"
+      },
+      "messages": {
+        "created": "کار برای {name} اضافه شد.",
+        "employeeFallback": "کارمند"
+      },
+      "doneOn": "انجام {date}",
+      "createdOn": "ایجاد {date}",
+      "empty": "هنوز کاری وجود ندارد.",
+      "errors": {
+        "load": "بارگذاری کارها ناموفق بود",
+        "create": "ایجاد کار ناموفق بود"
+      }
+    },
+    "sessions": {
+      "title": "نشست‌ها",
+      "subtitle": "توکن‌های تازه برای ادمین‌ها و کارمندان. هر دستگاه مشکوک را ابطال کنید.",
+      "table": {
+        "user": "کاربر",
+        "role": "نقش",
+        "created": "ایجاد",
+        "lastSeen": "آخرین مشاهده",
+        "expires": "انقضا",
+        "ip": "IP",
+        "userAgent": "عامل کاربر",
+        "actions": "اقدامات"
+      },
+      "status": {
+        "revoked": "باطل شده"
+      }
+    },
+    "unifi": {
+      "title": "یکپارچه‌سازی UniFi",
+      "subtitle": "دوربین‌های Protect را متصل کن و پیشنهاد حضورِ افراد مشخص را بررسی کن.",
+      "back": "بازگشت",
+      "fields": {
+        "host": "هاست UniFi",
+        "token": "توکن دسترسی",
+        "tlsVerify": "اجبار به بررسی گواهی TLS"
+      },
+      "placeholders": {
+        "host": "https://unifi.local",
+        "token": "توکن API UniFi",
+        "tokenStored": "به‌صورت امن ذخیره شده"
+      },
+      "helpers": {
+        "token": "خالی بگذارید تا از توکن ذخیره‌شده استفاده شود."
+      },
+      "actions": {
+        "test": "تست اتصال"
+      },
+      "errors": {
+        "save": "ذخیرهٔ تنظیمات ناموفق بود",
+        "connect": "اتصال برقرار نشد"
+      },
+      "messages": {
+        "saved": "تنظیمات UniFi ذخیره شد.",
+        "connected": "اتصال موفق بود."
+      },
+      "protect": {
+        "connectionHint": "اتصال به کنسولی که دوربین‌ها را مدیریت می‌کند.",
+        "connected": "اتصال موفق به Protect {version} · {count} دوربین",
+        "face": "قابلیت شناسایی چهره",
+        "personOnly": "شناسایی چهرهٔ داخلی گزارش نشده",
+        "attendanceTitle": "حضورِ فرد مشخص",
+        "ruleDescription": "با شناسایی فرد انتخاب‌شده توسط این دوربین، برای همان روز به وقت مادرید یک حضور پیشنهادی ساخته می‌شود. ثبت قطعی کارکرد و اثر آن بر حقوق نیازمند تأیید مدیر است.",
+        "employee": "کارمند",
+        "choose": "انتخاب…",
+        "personName": "نام شخص در Protect",
+        "alarmName": "نام دقیق هشدار در Protect",
+        "recognitionHelp": "شرط هشدار باید ID → Specific Face و نام همین فرد باشد. تشخیص عمومی Person هویت فرد را تأیید نمی‌کند.",
+        "confirmRecognition": "هشدار Specific Face را برای همین فرد و دوربین تنظیم و بررسی کرده‌ام.",
+        "enable": "دریافت حضور پیشنهادی روزانه",
+        "setup": "اتصال هشدار شناسایی",
+        "step1": "در Protect ← Find Anything ← Faces ← Manage Identifications، چهره و نام کارمند را اضافه کنید و Create Person را بزنید. شناسایی را روی دوربین انتخاب‌شده بررسی کنید.",
+        "step2": "در Alarm Manager گزینهٔ ID → Specific Face و همین فرد را انتخاب کنید؛ فقط دوربین تشخیص چهره را در Scope بگذارید و زمان را Always انتخاب کنید. نام هشدار باید دقیقاً مطابق بالا باشد.",
+        "step3": "عمل Webhook را با نشانی خصوصی زیر اضافه کنید و پس از بررسی تنظیمات، دریافت حضور پیشنهادی را فعال کنید. عکس‌ها در HomeHero کپی نمی‌شوند.",
+        "webhook": "دریافت نشانی خصوصی وب‌هوک",
+        "copy": "کپی",
+        "copied": "کپی شد",
+        "saveFirst": "ابتدا تنظیمات اتصال را ذخیره کن.",
+        "reviewTitle": "حضورهای منتظر بررسی",
+        "reviewHelp": "تشخیص چهره شاهدی برای بررسی است و به‌تنهایی انجام یک روز کامل کار را ثابت نمی‌کند. پس از بررسی کار انجام‌شده تأیید کنید؛ هیچ پیشنهادی خودکار حقوق را تغییر نمی‌دهد.",
+        "noSuggestions": "مشاهده‌ای در انتظار بررسی نیست.",
+        "openAttendance": "باز کردن حضور و غیاب",
+        "approve": "تأیید روز کاری",
+        "dismiss": "رد پیشنهاد",
+        "required": "کارمند، دوربین، نام فرد و نام دقیق هشدار را انتخاب کنید.",
+        "camera": "دوربین تشخیص چهره",
+        "dayWindow": "تمام ساعات · یک بار در روز",
+        "lastDelivery": "آخرین دریافت معتبر: {time} (مادرید). این زمان رسیدن پیام را تأیید می‌کند، نه حضور فرد را.",
+        "noDelivery": "هنوز پیام معتبری از Webhook دریافت نشده. تست هشدار Protect را با دریافت حضور پیشنهادیِ خاموش اجرا کنید."
+      }
+    },
+    "holidayCalendars": {
+      "title": "تقویم‌های تعطیلات",
+      "subtitle": "شهرها/منطقه‌ها با لیست تعطیلات قابل واردکردن. می‌توان یک تقویم را به کارمندان اختصاص داد.",
+      "newCalendar": "تقویم جدید",
+      "columns": {
+        "name": "نام",
+        "timezone": "منطقهٔ زمانی",
+        "holidays": "تعطیلات",
+        "employees": "کارمندان",
+        "actions": "اقدامات"
+      },
+      "defaultLocale": "پیش‌فرض {locale}",
+      "actions": {
+        "manage": "مدیریت"
+      },
+      "empty": "هنوز تقویم تعطیلاتی وجود ندارد."
+    },
+    "holidayCalendarsNew": {
+      "title": "تقویم تعطیلات جدید",
+      "subtitle": "یک تقویم شهر/منطقه بسازید و تعطیلات را وارد کنید (ICS/CSV/URL).",
+      "cancel": "انصراف"
+    },
+    "holidayCalendarsForm": {
+      "fields": {
+        "name": "نام",
+        "country": "کشور",
+        "region": "منطقه",
+        "city": "شهر",
+        "defaultLocale": "زبان پیش‌فرض",
+        "timezone": "منطقهٔ زمانی"
+      },
+      "placeholders": {
+        "name": "Barcelona",
+        "country": "ES",
+        "region": "Catalonia",
+        "city": "Barcelona",
+        "timezone": "Europe/Madrid"
+      },
+      "languageOptions": {
+        "english": "انگلیسی",
+        "spanish": "اسپانیایی"
+      },
+      "actions": {
+        "create": "ایجاد تقویم",
+        "save": "ذخیرهٔ تغییرات"
+      },
+      "errors": {
+        "save": "ذخیرهٔ تقویم ممکن نبود"
+      }
+    },
+    "holidayCalendarDetail": {
+      "summary": "{holidays} تعطیل • {employees} کارمند",
+      "back": "بازگشت",
+      "settings": "تنظیمات",
+      "import": {
+        "title": "وارد کردن",
+        "tip": "نکته: اول پیش‌نمایش بگیرید تا موارد تکراری را ببینید، بعد با overwrite/merge اعمال کنید."
+      },
+      "recent": {
+        "title": "تعطیلات اخیر",
+        "columns": {
+          "date": "تاریخ",
+          "name": "نام",
+          "source": "منبع"
+        },
+        "empty": "هنوز تعطیلی وجود ندارد."
+      }
+    },
+    "holidayCalendarImport": {
+      "mode": {
+        "label": "حالت",
+        "skip": "رد کردن تکراری‌ها",
+        "overwrite": "بازنویسی تکراری‌ها",
+        "merge": "ادغام نام‌ها بر اساس زبان"
+      },
+      "dryRun": "پیش‌نمایش (فقط مشاهده)",
+      "filterCity": "فیلتر رویدادها بر اساس شهر: {city}",
+      "replaceExisting": "هنگام اعمال، تعطیلات موجود را جایگزین کن (خطرناک)",
+      "urlImport": {
+        "label": "وارد کردن از URL (.ics یا .csv)",
+        "placeholder": "https://example.com/holidays.ics"
+      },
+      "fileUpload": {
+        "label": "آپلود فایل ICS/CSV"
+      },
+      "csvPaste": {
+        "label": "یا CSV را بچسبانید",
+        "placeholder": "date,name,locale\n2026-01-01,New Year,es",
+        "help": "ستون‌های CSV: date,name,locale?. اگر locale حذف شود، از زبان پیش‌فرض تقویم ({locale}) استفاده می‌شود."
+      },
+      "actions": {
+        "preview": "پیش‌نمایش وارد کردن",
+        "apply": "اعمال وارد کردن"
+      },
+      "errors": {
+        "importFailed": "وارد کردن ناموفق بود"
+      },
+      "result": {
+        "preview": "پیش‌نمایش",
+        "applied": "اعمال شد",
+        "mode": "mode={mode}",
+        "summary": "total={total} create={create} overwrite={overwrite} merge={merge} skip={skip}",
+        "previewLimit": "نمایش ۵۰ مورد اول…"
+      }
+    },
+    "identityUploads": {
+      "title": "آپلود مدارک",
+      "subtitle": "گذرنامه یا کارت شناسایی و یک آواتار اختیاری را با یادآور تاریخ انقضا ذخیره کنید.",
+      "avatarAlt": "پیش‌نمایش آواتار",
+      "expiredNotice": "مدارک منقضی‌شده اینجا نمایش داده می‌شوند تا به کارمند یادآوری کنید تمدید کند.",
+      "document": {
+        "title": "مدرک",
+        "help": "یک PDF یا تصویر گذرنامه/کارت شناسایی آپلود کنید. به کارمند نمایش داده نمی‌شود.",
+        "expiration": "تاریخ انقضا"
+      },
+      "avatar": {
+        "title": "آواتار",
+        "help": "در پورتال کارمند قابل مشاهده است. اگر ممکن است از عکس مربع استفاده کنید."
+      },
+      "maxSize": "حداکثر 50 MB.",
+      "recentUploads": "آپلودهای اخیر",
+      "uploaded": "آپلود شده {date}",
+      "visibleToEmployee": "• قابل مشاهده برای کارمند",
+      "actions": {
+        "preview": "پیش‌نمایش",
+        "delete": "حذف"
+      },
+      "status": {
+        "expired": "منقضی",
+        "valid": "معتبر",
+        "noExpiry": "بدون انقضا"
+      },
+      "errors": {
+        "upload": "آماده‌سازی آپلود ممکن نبود",
+        "delete": "حذف مدرک ممکن نبود.",
+        "deleteUnexpected": "خطای غیرمنتظره هنگام حذف فایل."
+      },
+      "messages": {
+        "avatarUploaded": "آواتار آپلود شد.",
+        "documentUploaded": "مدرک آپلود شد.",
+        "documentRemoved": "مدرک حذف شد."
+      }
+    },
+    "debtPanel": {
+      "addTransaction": "افزودن تراکنش",
+      "fields": {
+        "date": "تاریخ",
+        "type": "نوع",
+        "amount": "مبلغ ({currency})",
+        "note": "یادداشت"
+      },
+      "placeholders": {
+        "amount": "20.00",
+        "note": "(اختیاری)"
+      },
+      "types": {
+        "loanGiven": "وام داده‌شده",
+        "debtCollected": "وصول بدهی"
+      },
+      "actions": {
+        "add": "افزودن",
+        "void": "باطل کردن",
+        "confirmVoidTitle": "این تراکنش باطل شود؟",
+        "confirmVoidBody": "این مورد به‌عنوان باطل علامت می‌خورد و از محاسبهٔ مانده‌ها حذف می‌شود."
+      },
+      "status": {
+        "voided": "باطل شده"
+      },
+      "activity": {
+        "title": "گزارش فعالیت",
+        "empty": "هنوز فعالیتی نیست."
+      },
+      "recentTransactions": "تراکنش‌های اخیر",
+      "openingBalance": "ماندهٔ اولیه: {amount}",
+      "debtBalance": "ماندهٔ بدهی: {amount}",
+      "table": {
+        "date": "تاریخ",
+        "type": "نوع",
+        "amount": "مبلغ",
+        "note": "یادداشت"
+      },
+      "empty": "هنوز تراکنشی وجود ندارد",
+      "errors": {
+        "load": "بارگذاری ناموفق بود",
+        "create": "ایجاد ناموفق بود",
+        "delete": "باطل کردن ناموفق بود",
+        "amount": "مبلغ را وارد کنید"
+      }
+    },
+    "cardExpensesPanel": {
+      "addExpense": "افزودن هزینه",
+      "fields": {
+        "date": "تاریخ",
+        "concept": "عنوان",
+        "amount": "مبلغ ({currency})"
+      },
+      "placeholders": {
+        "concept": "خواربار",
+        "amount": "12.34"
+      },
+      "actions": {
+        "add": "افزودن",
+        "delete": "حذف"
+      },
+      "recentExpenses": "هزینه‌های اخیر",
+      "total": "جمع: {amount}",
+      "table": {
+        "date": "تاریخ",
+        "concept": "عنوان",
+        "amount": "مبلغ"
+      },
+      "empty": "هنوز هزینه‌ای وجود ندارد",
+      "errors": {
+        "load": "بارگذاری ناموفق بود",
+        "create": "ایجاد ناموفق بود",
+        "delete": "حذف ناموفق بود",
+        "validation": "عنوان و مبلغ را وارد کنید"
+      }
+    },
+    "payPeriodsPanel": {
+      "generateTitle": "تولید / به‌روزرسانی دوره",
+      "anchorDate": "هر تاریخی داخل دوره",
+      "generateAction": "تولید / به‌روزرسانی",
+      "tip": "نکته: ابتدا حضور و غیاب + هزینه‌ها + بدهی را اضافه کنید، سپس به‌روزرسانی کنید.",
+      "recentPeriods": "دوره‌های اخیر",
+      "totalNet": "جمع خالص (نمایش داده‌شده): {amount}",
+      "table": {
+        "period": "دوره",
+        "validDays": "روزهای معتبر",
+        "gross": "ناخالص",
+        "expenses": "هزینه‌ها",
+        "debtDelta": "Δ بدهی",
+        "net": "خالص",
+        "status": "وضعیت"
+      },
+      "frequency": {
+        "weekly": "هفتگی",
+        "monthly": "ماهانه"
+      },
+      "status": {
+        "draft": "پیش‌نویس",
+        "final": "نهایی",
+        "paid": "پرداخت‌شده"
+      },
+      "empty": "هنوز دورهٔ پرداختی وجود ندارد",
+      "errors": {
+        "load": "بارگذاری ناموفق بود",
+        "generate": "تولید ناموفق بود"
+      }
+    },
+    "payPeriodDetail": {
+      "summary": {
+        "period": "دوره",
+        "status": "وضعیت: {status}",
+        "validDays": "روزهای معتبر",
+        "dailyRate": "نرخ روزانه: {amount}",
+        "gross": "ناخالص",
+        "expenses": "هزینه‌ها: {amount}",
+        "netPay": "حقوق خالص",
+        "debt": "بدهی: {start} → {end}"
+      },
+      "actions": {
+        "markPaid": "علامت‌گذاری به‌عنوان پرداخت‌شده",
+        "refresh": "به‌روزرسانی",
+        "save": "ذخیرهٔ یادداشت/وضعیت",
+        "downloadReceipt": "دانلود رسید (PDF)"
+      },
+      "statusSection": {
+        "title": "وضعیت",
+        "paidAt": "پرداخت در: {date}"
+      },
+      "note": {
+        "title": "یادداشت پرداخت",
+        "placeholder": "یادداشت پرداخت را اضافه کنید"
+      },
+      "sections": {
+        "attendance": "حضور و غیاب",
+        "cardExpenses": "هزینه‌های کارت",
+        "debtLedger": "دفتر بدهی"
+      },
+      "attendanceTable": {
+        "date": "تاریخ",
+        "worked": "کارکرده",
+        "valid": "معتبر"
+      },
+      "attendanceFlags": {
+        "holiday": "تعطیل",
+        "weekend": "آخر هفته",
+        "extra": "اضافه‌کاری"
+      },
+      "cardExpensesTable": {
+        "date": "تاریخ",
+        "concept": "عنوان",
+        "amount": "مبلغ"
+      },
+      "debtTable": {
+        "date": "تاریخ",
+        "type": "نوع",
+        "amount": "مبلغ",
+        "types": {
+          "loanGiven": "وام داده‌شده",
+          "debtCollected": "وصول بدهی"
+        }
+      },
+      "status": {
+        "draft": "پیش‌نویس",
+        "final": "نهایی",
+        "paid": "پرداخت‌شده"
+      },
+      "empty": "هیچ",
+      "errors": {
+        "load": "بارگذاری ناموفق بود",
+        "markPaid": "علامت‌گذاری به‌عنوان پرداخت‌شده ناموفق بود",
+        "save": "ذخیرهٔ تغییرات ناموفق بود"
+      }
+    },
+    "actions": {
+      "delete": "حذف",
+      "confirmTitle": "تأیید حذف",
+      "confirmBody": "«{name}» حذف شود؟ این کار قابل بازگشت نیست. سوابق مالی محافظت می‌شوند.",
+      "cancel": "انصراف",
+      "deleting": "در حال حذف…",
+      "failed": "انجام عملیات ممکن نشد. دوباره تلاش کنید.",
+      "edit": "ویرایش",
+      "reopen": "بازگشایی",
+      "complete": "انجام شد",
+      "save": "ذخیره",
+      "draft": "پیش‌نویس",
+      "menu": "منو",
+      "language": "زبان"
+    },
+    "pushDiagnostics": {
+      "title": "وضعیت تحویل اعلان‌ها",
+      "healthy": "سرویس ارسال فعال است",
+      "unhealthy": "سرویس ارسال پاسخ نمی‌دهد؛ ممکن است اعلان‌ها با تأخیر ارسال شوند",
+      "empty": "ارسال‌های جدید اینجا نمایش داده می‌شوند. اعلان‌های قدیمی دوباره ارسال نمی‌شوند.",
+      "accepted": "سرویس Push پذیرفته است",
+      "displayed": "دستگاه نمایش را تأیید کرده است",
+      "clicked": "در دستگاه باز شده است",
+      "pending": "در صف / تلاش مجدد",
+      "failed": "ارسال ناموفق",
+      "expired": "اشتراک دستگاه منقضی شده است",
+      "cancelled": "خوانده‌شده / منقضی",
+      "attempts": "تعداد تلاش: {count}",
+      "testResult": "پذیرفته‌شده توسط سرویس Push: {sent}. ناموفق: {failed}. این به‌تنهایی نمایش روی گوشی را تأیید نمی‌کند."
+    },
+    "weeklyEmail": {
+      "title": "ارسال فیش هفتگی با ایمیل",
+      "schedule": "یکشنبه ساعت ۲۰ به وقت مادرید، از هفته جاری. هفته‌های قبل خودکار ارسال نمی‌شوند.",
+      "enabled": "فیش PDF هفتگی برای این کارمند ارسال شود",
+      "error": "خواندن یا ذخیره تنظیمات ممکن نشد.",
+      "settings": "تنظیمات فیش حقوقی",
+      "settingsHelp": "این مشخصات در PDF نمایش داده می‌شوند. فقط اطلاعات تأییدشده کارفرما را وارد کنید.",
+      "employerName": "نام کارفرما",
+      "employerTaxId": "NIF / NIE کارفرما",
+      "employerAddress": "نشانی کارفرما",
+      "saved": "تنظیمات ذخیره شد.",
+      "download": "دانلود فیش حقوقی PDF"
+    }
+  }
+}

@@ -1,0 +1,647 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  ADMIN
+  EMPLOYEE
+}
+
+enum PayFrequency {
+  WEEKLY_ISO
+  MONTHLY
+}
+
+enum AttendanceSource {
+  UNIFI
+  MANUAL
+  HYBRID
+}
+
+enum AttendanceDaySource {
+  UNIFI
+  MANUAL
+  RESOLVED
+}
+
+enum DebtTransactionType {
+  LOAN_GIVEN
+  DEBT_COLLECTED
+}
+
+enum PayPeriodStatus {
+  DRAFT
+  FINAL
+  PAID
+}
+
+enum OtpProvider {
+  DEV
+  SMTP
+  TWILIO_VERIFY
+  TELEGRAM_GATEWAY
+}
+
+enum HolidaySource {
+  MANUAL
+  IMPORT_ICS
+  IMPORT_CSV
+  IMPORT_URL
+}
+
+enum TodoStatus {
+  OPEN
+  DONE
+}
+
+enum EssentialItemStatus {
+  IN_STOCK
+  NEED_TO_BUY
+  BOUGHT
+}
+
+model AuthUser {
+  id           String   @id @default(cuid())
+  role         UserRole
+  email        String?  @unique
+  phoneE164    String?  @unique
+  passwordHash String?
+
+  employeeId String?   @unique
+  employee   Employee? @relation(fields: [employeeId], references: [id], onDelete: SetNull)
+
+  totpSecretEncrypted String?
+  totpEnabled         Boolean @default(false)
+
+  sessions Session[]
+
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  attendanceDays    AttendanceDay[]
+  cardExpenses      CardExpense[]
+  debtTransactions  DebtTransaction[]
+  voidedDebtTransactions DebtTransaction[] @relation("DebtTransactionVoidedBy")
+  employeeDocuments EmployeeDocument[]
+  auditLogs         AuditLog[]
+  todosCreated      TodoItem[] @relation("TodoCreatedBy")
+  essentialsCreated EssentialItem[] @relation("EssentialCreatedBy")
+}
+
+model Session {
+  id     String   @id @default(cuid())
+  userId String
+  user   AuthUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  refreshTokenHash String    @unique
+  expiresAt        DateTime
+  revokedAt        DateTime?
+  lastSeenAt       DateTime  @default(now())
+
+  ip        String?
+  userAgent String?
+
+  createdAt DateTime @default(now())
+
+  @@index([userId, expiresAt])
+}
+
+model OtpChallenge {
+  id                String      @id @default(cuid())
+  provider          OtpProvider
+  recipient         String
+  providerChallenge String?
+  // DEV provider only (never store plaintext OTP)
+  devCodeHash       String?
+
+  contextJson String?
+
+  attempts    Int       @default(0)
+  lockedUntil DateTime?
+  expiresAt   DateTime
+
+  createdAt DateTime @default(now())
+
+  @@index([recipient, expiresAt])
+}
+
+model AppSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  // Generic settings table for:
+  // - UniFi base URL / token (encrypted)
+  // - OTP provider credentials (encrypted)
+  // - Default currency, org name, etc.
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+}
+
+model Employee {
+  weeklyEmailEnabled Boolean @default(false)
+  weeklyEmailEnabledAt DateTime?
+  weeklyEmails WeeklyPayrollEmail[]
+  id       String @id @default(cuid())
+  publicId String @unique
+
+  firstName String
+  lastName  String
+
+  phoneE164 String? @unique
+  email     String? @unique
+  locale    String  @default("en")
+  timezone  String  @default("Europe/Madrid")
+  currency  String  @default("EUR")
+
+  homeAddress            String?
+  emergencyContactName   String?
+  emergencyContactPhone  String?
+
+  payFrequency   PayFrequency @default(WEEKLY_ISO)
+  dailyRateCents Int
+  // Opening debt carried from previous years (employee owes employer).
+  // This is included in all debt balance calculations.
+  openingDebtCents Int @default(0)
+
+  attendanceSource AttendanceSource @default(HYBRID)
+  unifiActorId     String?
+
+  bankIbanEncrypted String?
+  bankName          String?
+
+  holidayCalendarId String?
+  holidayCalendar   HolidayCalendar? @relation(fields: [holidayCalendarId], references: [id], onDelete: SetNull)
+
+  attendanceDays AttendanceDay[]
+  unifiEvents    UnifiAccessEvent[]
+  protectSuggestions ProtectAttendanceSuggestion[]
+
+  cardExpenses     CardExpense[]
+  debtTransactions DebtTransaction[]
+  payPeriods       PayPeriod[]
+  documents        EmployeeDocument[]
+  todos            TodoItem[]
+  absences         Absence[]
+  weekendWorkRequests WeekendWorkRequest[]
+  essentialStatuses EssentialStatus[]
+  essentialNeeds EmployeeEssentialNeed[]
+  notifications    EmployeeNotification[]
+  pushSubscriptions EmployeePushSubscription[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  authUser  AuthUser?
+}
+
+model TodoItem {
+  id String @id @default(cuid())
+
+  title       String
+  description String?
+  status      TodoStatus @default(OPEN)
+
+  assignedToEmployeeId String
+  assignedToEmployee   Employee @relation(fields: [assignedToEmployeeId], references: [id], onDelete: Cascade)
+
+  createdByAdminId String
+  createdByAdmin   AuthUser @relation("TodoCreatedBy", fields: [createdByAdminId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  doneAt    DateTime?
+
+  @@index([assignedToEmployeeId, status])
+  @@index([createdByAdminId])
+}
+
+model Absence {
+  id String @id @default(cuid())
+
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  startDate DateTime @db.Date
+  endDate   DateTime @db.Date
+  reason    String?
+
+  createdAt DateTime @default(now())
+
+  @@index([employeeId, startDate])
+}
+
+enum WeekendWorkRequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model WeekendWorkRequest {
+  id String @id @default(cuid())
+
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  date   DateTime               @db.Date
+  status WeekendWorkRequestStatus @default(PENDING)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([employeeId, date])
+  @@index([employeeId, status])
+}
+
+model EssentialItem {
+  id String @id @default(cuid())
+
+  name            String
+  defaultQuantity Int?
+  isActive        Boolean @default(true)
+
+  createdByAdminId String
+  createdByAdmin   AuthUser @relation("EssentialCreatedBy", fields: [createdByAdminId], references: [id], onDelete: Cascade)
+
+  statuses EssentialStatus[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isActive])
+  @@index([createdByAdminId])
+}
+
+model EssentialStatus {
+  id String @id @default(cuid())
+
+  essentialItemId String
+  essentialItem   EssentialItem @relation(fields: [essentialItemId], references: [id], onDelete: Cascade)
+
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  status    EssentialItemStatus @default(IN_STOCK)
+  updatedAt DateTime @updatedAt
+
+  @@unique([employeeId, essentialItemId])
+  @@index([employeeId, status])
+  @@index([essentialItemId])
+}
+
+model EssentialSuggestion {
+  id String @id @default(cuid())
+
+  name           String
+  normalizedName String  @unique
+  isActive       Boolean @default(true)
+
+  needs EmployeeEssentialNeed[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isActive, name])
+}
+
+model EmployeeEssentialNeed {
+  id String @id @default(cuid())
+
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  suggestionId String?
+  suggestion   EssentialSuggestion? @relation(fields: [suggestionId], references: [id], onDelete: SetNull)
+
+  name           String
+  normalizedName String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([employeeId, normalizedName])
+  @@index([employeeId, createdAt])
+  @@index([suggestionId])
+}
+
+model HolidayCalendar {
+  id            String  @id @default(cuid())
+  name          String
+  country       String?
+  region        String?
+  city          String?
+  timezone      String  @default("Europe/Madrid")
+  defaultLocale String  @default("en")
+
+  holidays  Holiday[]
+  employees Employee[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Holiday {
+  id         String          @id @default(cuid())
+  calendarId String
+  calendar   HolidayCalendar @relation(fields: [calendarId], references: [id], onDelete: Cascade)
+
+  date      DateTime      @db.Date
+  // JSON string: { "en": "Holiday name", "es": "...", ... }
+  nameJson  String
+  source    HolidaySource @default(MANUAL)
+  sourceRef String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([calendarId, date])
+  @@index([calendarId, date])
+}
+
+model AttendanceDay {
+  id         String   @id @default(cuid())
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  date DateTime @db.Date
+
+  // Resolved daily decision (what payroll engine uses)
+  worked          Boolean @default(false)
+  authorizedExtra Boolean @default(false)
+
+  // Optional summary (derived from UniFi events)
+  firstEntryTime DateTime?
+  lastExitTime   DateTime?
+  uncertainty    Boolean   @default(false)
+
+  notes  String?
+  source AttendanceDaySource @default(RESOLVED)
+
+  manualOverrideByUserId String?
+  manualOverrideByUser   AuthUser? @relation(fields: [manualOverrideByUserId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([employeeId, date])
+  @@index([employeeId, date])
+}
+
+model UnifiAccessEvent {
+  id         String    @id @default(cuid())
+  employeeId String?
+  employee   Employee? @relation(fields: [employeeId], references: [id], onDelete: SetNull)
+
+  occurredAt DateTime
+  doorId     String?
+  actorId    String?
+  direction  String?
+
+  // Prefer UniFi-provided ID if available; otherwise stable hash.
+  externalId String?
+  stableHash String  @unique
+
+  rawJson String
+
+  createdAt DateTime @default(now())
+
+  @@index([occurredAt])
+  @@index([actorId, occurredAt])
+}
+
+model CardExpense {
+  id         String   @id @default(cuid())
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  date        DateTime @db.Date
+  concept     String
+  amountCents Int
+  currency    String   @default("EUR")
+
+  createdByUserId String?
+  createdByUser   AuthUser? @relation(fields: [createdByUserId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([employeeId, date])
+}
+
+model DebtTransaction {
+  id         String   @id @default(cuid())
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  date        DateTime            @db.Date
+  type        DebtTransactionType
+  amountCents Int
+  currency    String              @default("EUR")
+  note        String?
+
+  createdByUserId String?
+  createdByUser   AuthUser? @relation(fields: [createdByUserId], references: [id], onDelete: SetNull)
+
+  voidedAt DateTime?
+  voidedByUserId String?
+  voidedByUser   AuthUser? @relation("DebtTransactionVoidedBy", fields: [voidedByUserId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([employeeId, date])
+}
+
+enum EmployeeNotificationType {
+  DIAGNOSTIC_TEST
+  WEEKEND_REQUEST_DECISION
+  TODO_ASSIGNED
+  ESSENTIALS_UPDATED
+}
+
+model EmployeeNotification {
+  deliveries NotificationDelivery[]
+  id String @id @default(cuid())
+
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  type  EmployeeNotificationType
+  title String
+  body  String
+
+  metadataJson String?
+  readAt DateTime?
+  clickedAt DateTime?
+  emailSentAt DateTime?
+  emailedInDigestAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@index([employeeId, createdAt])
+  @@index([employeeId, readAt])
+}
+
+model EmployeePushSubscription {
+  deliveries NotificationDelivery[]
+  id String @id @default(cuid())
+
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  endpoint String
+  p256dh   String
+  auth     String
+  expirationTime DateTime?
+  userAgent String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([employeeId])
+  @@unique([employeeId, endpoint])
+}
+
+model PayPeriod {
+  id         String   @id @default(cuid())
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  frequency PayFrequency
+  startDate DateTime     @db.Date
+  endDate   DateTime     @db.Date
+
+  status    PayPeriodStatus @default(DRAFT)
+  paidAt    DateTime?
+  adminNote String?
+
+  // Computed snapshots (so historical receipts are stable)
+  validDays      Int @default(0)
+  dailyRateCents Int @default(0)
+  grossPayCents  Int @default(0)
+
+  cardExpensesCents  Int @default(0)
+  loansCents         Int @default(0)
+  debtCollectedCents Int @default(0)
+
+  debtStartCents Int @default(0)
+  debtEndCents   Int @default(0)
+
+  netPayCents Int    @default(0)
+  currency    String @default("EUR")
+
+  receiptFileKey String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([employeeId, startDate, endDate])
+  @@index([employeeId, startDate])
+}
+
+model EmployeeDocument {
+  id         String   @id @default(cuid())
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  kind      String?
+  filename  String
+  mimeType  String
+  sizeBytes Int
+
+  expirationDate DateTime?
+
+  storageKey      String
+  encryptedAtRest Boolean @default(true)
+
+  visibleToEmployee Boolean @default(false)
+
+  uploadedByUserId String?
+  uploadedByUser   AuthUser? @relation(fields: [uploadedByUserId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([employeeId, createdAt])
+}
+
+model AuditLog {
+  id String @id @default(cuid())
+
+  actorUserId String?
+  actorUser   AuthUser? @relation(fields: [actorUserId], references: [id], onDelete: SetNull)
+  actorRole   UserRole?
+
+  action     String
+  entityType String?
+  entityId   String?
+
+  ip        String?
+  userAgent String?
+
+  // JSON string; keep schema flexible
+  metadataJson String?
+
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([entityType, entityId])
+}
+
+// Durable, per-device outbox. Existing notifications are deliberately not replayed.
+model NotificationDelivery {
+  id String @id @default(cuid())
+  notificationId String
+  notification EmployeeNotification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+  subscriptionId String
+  subscription EmployeePushSubscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+  status String @default("PENDING")
+  attempts Int @default(0)
+  nextAttemptAt DateTime @default(now())
+  lockedUntil DateTime?
+  acceptedAt DateTime?
+  receivedAt DateTime?
+  clickedAt DateTime?
+  lastError String?
+  createdAt DateTime @default(now())
+  @@unique([notificationId, subscriptionId])
+  @@index([status, nextAttemptAt])
+}
+
+model WeeklyPayrollEmail {
+  id String @id @default(cuid())
+  employeeId String
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  weekStart DateTime @db.Date
+  weekEnd DateTime @db.Date
+  status String @default("PENDING")
+  attempts Int @default(0)
+  nextAttemptAt DateTime @default(now())
+  lockedUntil DateTime?
+  recipient String
+  payPeriodId String?
+  sentAt DateTime?
+  messageId String?
+  lastError String?
+  createdAt DateTime @default(now())
+  @@unique([employeeId, weekStart])
+  @@index([status, nextAttemptAt])
+}
+
+// Camera evidence stays separate from payable attendance until an admin reviews it.
+model ProtectAttendanceSuggestion {
+  id String @id @default(cuid())
+  employeeId String
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Restrict)
+  date DateTime @db.Date
+  personName String
+  alarmName String
+  cameraName String
+  seenAt DateTime
+  status String @default("PENDING")
+  reviewedAt DateTime?
+  reviewedByUserId String?
+  createdAt DateTime @default(now())
+  @@unique([employeeId, date])
+  @@index([status, createdAt])
+}

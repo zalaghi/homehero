@@ -1,0 +1,1 @@
+ALTER TYPE "EmployeeNotificationType" ADD VALUE IF NOT EXISTS 'DIAGNOSTIC_TEST';
